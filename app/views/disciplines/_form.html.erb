@@ -16,6 +16,15 @@
     <%= f.text_field :name %>
   </div>
 
+  <div id="topics">
+    <% f.fields_for :topics do |topic| %>
+      <%= render 'topic_fields', f: topic %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add topic', f, :topics %>
+    </div>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
