@@ -54,7 +54,9 @@ class DisciplinesController < ApplicationController
   # DELETE /disciplines/1
   # DELETE /disciplines/1.json
   def destroy
+    @discipline.topics.delete_all
     @discipline.destroy
+
     respond_to do |format|
       format.html { redirect_to disciplines_url, notice: 'Discipline was successfully destroyed.' }
       format.json { head :no_content }
@@ -69,6 +71,6 @@ class DisciplinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def discipline_params
-      params.require(:discipline).permit(:name, topic_attributes: [:name])
+      params.require(:discipline).permit(:name, topics_attributes: [:name])
     end
 end
