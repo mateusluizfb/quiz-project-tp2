@@ -17,7 +17,7 @@
   </div>
 
   <div id="topics">
-    <% f.fields_for :topics do |topic| %>
+    <%= f.fields_for :topics do |topic| %>
       <%= render 'topic_fields', f: topic %>
     <% end %>
     <div class="links">

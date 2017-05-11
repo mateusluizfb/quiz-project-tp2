@@ -5,5 +5,14 @@
   <%= @discipline.name %>
 </p>
 
+<div>
+  <ul>
+    <% @discipline.topics.each do |topic| %>
+      <li><%= topic.name %></li>
+    <% end %>
+  </ul>
+
+</div>
+
 <%= link_to 'Edit', edit_discipline_path(@discipline) %> |
 <%= link_to 'Back', disciplines_path %>
