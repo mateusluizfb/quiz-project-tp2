@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
@@ -10,7 +9,11 @@ Rails.application.routes.draw do
 
   get '/dashboard' => 'static_pages#dashboard'
 
-  resources :disciplines
+  resources :disciplines do
+    patch 'associate'
+    patch 'disassociate'
+  end
+
   resources :topics
   resources :users
   resources :quizzes

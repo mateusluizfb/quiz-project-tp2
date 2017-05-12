@@ -12,9 +12,10 @@
     <h6>Suas disciplinas:</h6>
     <ul>
       <% current_user.disciplines.each do |discipline| %>
-        <li><%= discipline.name %></li>
+        <li><%= link_to discipline.name, discipline_path(discipline) %></li>
       <% end %>
     </ul>
+    <br>
   <% end %>
   <%= link_to("Me cadastrar em uma disciplina", disciplines_path, class: 'btn btn-embossed btn-info') %>
 </div>

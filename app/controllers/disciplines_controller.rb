@@ -51,6 +51,24 @@ class DisciplinesController < ApplicationController
     end
   end
 
+  def associate
+    @discipline = Discipline.find(params[:discipline_id])
+
+    respond_to do |format|
+      current_user.disciplines << @discipline
+      format.js
+    end
+  end
+
+  def disassociate
+    @discipline = Discipline.find(params[:discipline_id])
+
+    respond_to do |format|
+      current_user.disciplines.delete(@discipline)
+      format.js
+    end
+  end
+
   # DELETE /disciplines/1
   # DELETE /disciplines/1.json
   def destroy
