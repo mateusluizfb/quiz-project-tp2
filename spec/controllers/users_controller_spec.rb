@@ -15,6 +15,9 @@ RSpec.describe UsersController, type: :controller do
     it 'Obtem todos os Users' do
       user1 = User.create(name: 'Fulano', email: 'fulado@gmail.com', login: 'fulano', password: '123456' )
       user2 = User.create(name: 'Ciclano', email: 'ciclano@gmail.com', login: 'ciclano', password: '123456', admin: true )
+      
+      sign_in user2
+
       get :index, session: { user_id: 2 }
       expect(assigns(:users)).to match_array([user1, user2])
     end
