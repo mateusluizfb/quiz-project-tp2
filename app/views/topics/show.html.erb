@@ -15,6 +15,19 @@
     <%= @topic.name %>
   </p>
 
+  <% if @topic.quizzes.empty? %>
+    <p>Esse tópico não possui nenhum quiz cadastrado.</p>
+  <% else %>
+    <p><strong>Quizzes:</strong></p>
+    <ul style='margin: 0'>
+      <% @topic.quizzes.each do |quiz| %>
+      <li><%= link_to quiz.name, discipline_topic_quiz_path(@discipline, @topic, quiz) %></li>
+      <% end %>
+    </ul>
+    <br>
+    <%= link_to("Ver todos os quizzes", discipline_topic_quizzes_path(@discipline, @topics), class: 'btn btn-embossed btn-info btn-sm') %>
+  <% end %>
+
 </div>
 
 <%= link_to 'Editar', edit_discipline_topic_path(@discipline, @topic), class: 'btn btn-embossed btn-success' %>

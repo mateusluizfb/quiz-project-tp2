@@ -52,6 +52,24 @@ class TopicsController < ApplicationController
     end
   end
 
+  def associate
+    @topic = Topic.find(params[:topic_id])
+
+    respond_to do |format|
+      current_user.topics << @topic
+      format.js
+    end
+  end
+
+  def disassociate
+    @topic = Topic.find(params[:topic_id])
+
+    respond_to do |format|
+      current_user.topics.delete(@topic)
+      format.js
+    end
+  end
+
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy

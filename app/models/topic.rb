@@ -1,6 +1,7 @@
 class Topic < ApplicationRecord
-  belongs_to :discipline
   has_many :quizzes
+  belongs_to :discipline
+  accepts_nested_attributes_for :quizzes, reject_if: :all_blank, allow_destroy: true
 
   validates_presence_of :name
 end
