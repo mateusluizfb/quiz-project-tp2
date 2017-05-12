@@ -21,7 +21,6 @@ RSpec.describe DisciplinesController, type: :controller do
     it 'Carrega todas as disciplinas' do
       discipline1, discipline2 = Discipline.create(name: 'teste1'), Discipline.create(name: 'teste2')
       get :index
-
       expect(assigns(:disciplines)).to match_array([discipline1, discipline2])
     end
 
