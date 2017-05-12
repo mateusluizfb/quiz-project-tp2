@@ -69,7 +69,6 @@ RSpec.describe DisciplinesController, type: :controller do
   end
 
   describe 'GET #create' do
-
     context 'Parâmetros válidos' do
 
       it 'Cria um usuário' do
@@ -80,7 +79,6 @@ RSpec.describe DisciplinesController, type: :controller do
             }
           }
         }.to change(Discipline, :count).by(1)
-        # expect
       end
 
       it 'Redirecionar para show' do
@@ -92,6 +90,44 @@ RSpec.describe DisciplinesController, type: :controller do
         expect(response).to redirect_to Discipline.last
       end
 
+    end
+  end
+
+  describe 'PATCH/PUT #update' do
+
+    it 'Atualizar via put' do
+      Discipline.create(id: 1, name: 'teste1')
+      put :update, params: {
+        id: 1,
+        discipline: {
+          name: 'teste2'
+        }
+      }
+      expect(Discipline.find(1).name).to eq('teste2')
+    end
+
+    it 'Atualizar via patch' do
+      Discipline.create(id: 1, name: 'teste1')
+      put :update, params: {
+        id: 1,
+        discipline: {
+          name: 'teste2'
+        }
+      }
+      expect(Discipline.find(1).name).to eq('teste2')
+    end
+
+  end
+
+  describe 'DELETE #delete' do
+
+    it 'Remover disciplina' do
+      Discipline.create(id: 1, name: 'teste1')
+      expect {
+        delete :destroy, params: {
+          id: 1
+        }
+      }.to change(Discipline, :count).by(-1)
     end
 
   end
