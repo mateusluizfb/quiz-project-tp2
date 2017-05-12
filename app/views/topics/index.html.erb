@@ -11,6 +11,7 @@
   <thead>
     <tr>
       <th>Nome</th>
+      <th>Quantidade de Quizzes</th>
       <th></th>
       <th></th>
       <th></th>
@@ -21,6 +22,11 @@
     <% @topics.each do |topic| %>
       <tr>
         <td><%= topic.name %></td>
+        <td>
+          <%= topic.quizzes.count %>
+          <span>&nbsp;&nbsp;</span>
+          <%= link_to("Visualizar quizzes", discipline_topic_quizzes_path(@discipline, topic), class: 'btn btn-embossed btn-info btn-xs') %>
+        </td>
         <td><%= link_to 'Exibir', discipline_topic_path(@discipline, topic) %></td>
         <td><%= link_to 'Editar', edit_discipline_topic_path(@discipline, topic) %></td>
         <td><%= link_to 'Excluir', discipline_topic_path(@discipline, topic), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
