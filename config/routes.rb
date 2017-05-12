@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   resources :disciplines
   resources :topics
   resources :users
+  resources :quizzes
 end

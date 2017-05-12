@@ -1,0 +1,28 @@
+<%= form_for @quiz do |f| %>
+  <% if @quiz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quiz.errors.count, "error") %> prohibited this @quiz from being saved:</h2>
+
+      <ul>
+      <% @quiz.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%=f.label :name, "Nome" %>
+  <%=f.text_field :name %>
+
+  <h3>Questões</h3>
+  <div id="questions">
+    <%=f.fields_for :questions do |question| %>
+      <%= render 'question_fields', f: question%>
+    <%end%>
+    <%= link_to_add_association 'Adicionar Questão', f , :questions %>
+  </div>
+
+  <div class="actions">
+    <%=f.submit %>
+  </div>
+<% end %>
