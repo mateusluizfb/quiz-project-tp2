@@ -13,10 +13,10 @@ Rails.application.routes.draw do
     patch 'associate'
     patch 'disassociate'
     
-    resources :topics
+    resources :topics do
+      resources :quizzes
+    end
   end
-
-  resources :topics
+  
   resources :users
-  resources :quizzes
 end

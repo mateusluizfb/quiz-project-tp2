@@ -1,4 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Detalhes do Tópico</h4>
+  <ul>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li><%= link_to(@discipline.name, discipline_path(@discipline)) %></li>
+    <li><%= link_to("Tópicos", discipline_topics_path(@discipline)) %></li>
+    <li><%= @topic.name %></li>
+    <li><%= link_to("Quizzes", discipline_topic_quizzes_path(@discipline, @topic)) %></li>
+    <li><%= @quiz.name %></li>
+  </ul>
+</div>
 
-<%= link_to 'Edit', edit_quiz_path(@quiz) %> |
-<%= link_to 'Back', quizzes_path %>
+<div class="jumbotron">
+
+  <p style='margin: 0'>
+    <strong>Nome:</strong>
+    <%= @quiz.name %>
+  </p>
+
+</div>
+
+<%= link_to 'Editar', edit_discipline_topic_quiz_path(@discipline, @topic, @quiz), class: 'btn btn-embossed btn-success' %>
+<%= link_to 'Voltar', discipline_topic_quizzes_path, class: 'btn btn-embossed btn-info' %>

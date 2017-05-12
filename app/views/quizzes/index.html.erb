@@ -13,10 +13,10 @@
   <tbody>
     <% @quizzes.each do |quiz| %>
       <tr>
-        <td><%= quiz.name %></td>
-        <td><%= link_to 'Show', quiz %></td>
-        <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
-        <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= quiz.name %></td> 
+        <td><%= link_to 'Exibir',  discipline_topic_quiz_path(@discipline, @topic, quiz) %></td>
+        <td><%= link_to 'Editar', edit_discipline_topic_quiz_path(@discipline, @topic, quiz) %></td>
+        <td><%= link_to 'Excluir', discipline_topic_quiz_path(@discipline, @topic, quiz), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Quiz', new_quiz_path, class: 'btn btn-embossed btn-success' %>
+<%= link_to 'New Quiz', new_discipline_topic_quiz_path, class: 'btn btn-embossed btn-success' %>

@@ -18,7 +18,7 @@
     <p><strong>Tópicos:</strong></p>
     <ul style='margin: 0'>
       <% @discipline.topics.each do |topic| %>
-      <li><%= topic.name %></li>
+      <li><%= link_to topic.name, discipline_topic_path(@discipline, topic) %></li>
       <% end %>
     </ul>
     <br>
