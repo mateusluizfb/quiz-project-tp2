@@ -1,19 +1,30 @@
-<p id="notice"><%= notice %></p>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Perfil do Usuário</h4>
+  <ul>
+    <li><%= link_to("Usuários", users_path) %></li>
+    <li><%= @user.name %></li>
+  </ul>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="jumbotron">
+  <p>
+    <strong>Nome:</strong>
+    <%= @user.name %>
+  </p>
 
-<p>
-  <strong>Login:</strong>
-  <%= @user.login %>
-</p>
+  <p>
+    <strong>Login:</strong>
+    <%= @user.login %>
+  </p>
 
-<p>
-  <strong>Admin:</strong>
-  <%= @user.admin %>
-</p>
+  <p>
+    <strong>Admin: </strong>
+    <%= @user.admin %>
+  </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+</div>
+
+
+<%= link_to 'Editar', edit_user_path(@user), class: 'btn btn-embossed btn-success' %>
+<span>&nbsp;</span>
+<%= link_to 'Voltar', users_path, class: 'btn btn-embossed btn-info' %>
