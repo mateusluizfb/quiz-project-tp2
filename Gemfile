@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'cancancan'
+
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'sass-material-colors'

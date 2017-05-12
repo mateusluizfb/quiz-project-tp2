@@ -1,0 +1,12 @@
+<div class="nested-fields">
+  <div class="field">
+    <%= f.label :text, "Texto"%>
+    <%= f.text_field :text%>
+  </div>
+  <div class="field">
+    <%= f.label :correct_option, "Alternativa correta?"%>
+    <%= f.check_box :correct_option%>
+  </div>
+
+  <%= link_to_remove_association "Remover Alternativa", f%>
+</div>

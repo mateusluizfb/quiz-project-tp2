@@ -1,0 +1,15 @@
+.login-box {
+  @include v-align;
+
+  width: 300px;
+  height: auto;
+  padding: 1.5em;
+  margin-top: 2em;
+
+  float: right;
+  right: 10em;
+
+  border-radius: 5px;
+
+  background-color: #fff;
+}
