@@ -17,6 +17,7 @@
 //= require respond.min
 //= require video
 //= require turbolinks
+//= require cocoon
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {

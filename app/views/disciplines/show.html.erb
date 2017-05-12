@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @discipline.name %>
+</p>
+
+<div>
+  <ul>
+    <% @discipline.topics.each do |topic| %>
+      <li><%= link_to topic.name, topic_path(topic) %></li>
+    <% end %>
+  </ul>
+
+</div>
+
+<%= link_to 'Edit', edit_discipline_path(@discipline) %> |
+<%= link_to 'Back', disciplines_path %>
