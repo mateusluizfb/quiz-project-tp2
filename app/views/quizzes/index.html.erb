@@ -1,12 +1,21 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Quizzes</h1>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Quizzes</h4>
+  <ul>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li><%= link_to(@discipline.name, discipline_path(@discipline)) %></li>
+    <li><%= link_to("Tópicos", discipline_topics_path(@discipline)) %></li>
+    <li><%= link_to(@topic.name, discipline_topic_path(@discipline, @topic)) %></li>
+    <li>Quizzes</li>
+  </ul>
+</div>
 
 <table class="table table-bordered table-hover datatable">
   <thead>
     <tr>
       <th>Name</th>
-      <th colspan="3"></th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -22,6 +31,6 @@
   </tbody>
 </table>
 
-<br>
+<br><br><br>
 
-<%= link_to 'New Quiz', new_discipline_topic_quiz_path, class: 'btn btn-embossed btn-success' %>
+<%= link_to 'Novo Quiz', new_discipline_topic_quiz_path, class: 'btn btn-embossed btn-success' %>
