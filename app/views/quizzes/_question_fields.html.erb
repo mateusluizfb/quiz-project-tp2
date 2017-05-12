@@ -1,16 +1,26 @@
 <div class="nested-fields">
+
+  <h4>
+    <%= "Questão" %>
+  </h4>
   <div class="field">
-    <%= f.label :statement, "Titulo da Questão"%>
+    <%= f.label :statement, "Titulo da Questão: "%>
     <%= f.text_field :statement%>
   </div>
 
+    <div class="jumbotron">
   <div id="answers">
     <%= f.fields_for :answers do |answer| %>
       <%= render 'answer_fields', f:  answer%>
     <% end %>
     <div class="links">
-      <%= link_to_add_association 'Adicionar Alternativa', f, :answers%>
+      <%= link_to_add_association '  Adicionar Alternativa', f, :answers, {class: 'fui-plus-circle'} %>
     </div>
   </div>
-  <%= link_to_remove_association "Remover Questão", f %>
+</div>
+  <br>
+  <%= link_to_remove_association "  Remover Questão", f , {class: 'fui-cross-circle'}%>
+  <br>
+  <br>
+
 </div>
