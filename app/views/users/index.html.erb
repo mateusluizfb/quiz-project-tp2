@@ -1,14 +1,15 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title, "Usuários" %>
 
-<h1>Users</h1>
-
-<table>
+<table class="table table-bordered table-hover datatable">
   <thead>
     <tr>
-      <th>Name</th>
+      <th>Nome</th>
       <th>Login</th>
-      <th>Admin</th>
-      <th colspan="3"></th>
+      <th>Email</th>
+      <th>Admin?</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -17,15 +18,16 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.login %></td>
+        <td><%= user.email %></td>
         <td><%= user.admin %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', user %></td>
+        <td><%= link_to 'Editar', edit_user_path(user) %></td>
+        <td><%= link_to 'Excluir', user, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br><br><br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Novo Usuário', new_user_path, class: 'btn btn-embossed btn-success' %>

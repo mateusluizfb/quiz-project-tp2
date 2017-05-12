@@ -1,24 +1,11 @@
-# README
+# TP2 - Quiztime
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Como inicializar o projeto
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Certifique-se de que você possuí o ruby e a gema do Rails instalada
+- Entre no projeto e execute os seguintes comandos:
+- bundle install
+- rails db:create
+- rails db:migrate
+- Para rodar o servidor apenas digite 'rails s'
+- Para rodar os testes 'bundle exec rspec'

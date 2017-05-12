@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Disciplinas</h1>
+
+<table class="table table-bordered table-hover datatable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disciplines.each do |discipline| %>
+      <tr>
+        <td><%= discipline.name %></td>
+        <td><%= link_to 'Exibir', discipline %></td>
+        <td><%= link_to 'Editar', edit_discipline_path(discipline) %></td>
+        <td><%= link_to 'Excluir', discipline, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>
+
+<%= link_to 'Nova Disciplina', new_discipline_path, class: 'btn btn-embossed btn-success' %>

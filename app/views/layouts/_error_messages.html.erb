@@ -1,0 +1,14 @@
+<% if entity.errors.any? %>
+  <div class="alert alert-info">
+    <button type="button" class="close fui-cross" data-dismiss="alert"></button>
+    <h4>Ops! Parece que algo está errado...</h4>
+    <p>Verifique as informações abaixo:</p>
+    <ul style='padding-top: .5em'>
+    <% entity.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+
+    <a href="#" data-dismiss="alert" class="btn btn-info btn-embossed btn-wide">Certo</a>
+  </div>
+<% end %>

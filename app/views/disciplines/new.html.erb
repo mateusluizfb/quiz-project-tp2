@@ -1,0 +1,11 @@
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Criar Disciplina</h4>
+  <ul>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li>Nova Disciplina</li>
+  </ul>
+</div>
+
+<%= render 'form', discipline: @discipline %>
+
+<%= link_to 'Voltar', disciplines_path %>

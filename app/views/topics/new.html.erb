@@ -1,0 +1,11 @@
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Criar Tópico</h4>
+  <ul>
+    <li><%= link_to("Tópico", disciplines_path) %></li>
+    <li>Novo Tópico</li>
+  </ul>
+</div>
+
+<%= render 'form', topic: @topic %>
+
+<%= link_to 'Voltar', topics_path %>

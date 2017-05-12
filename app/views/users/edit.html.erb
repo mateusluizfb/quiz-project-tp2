@@ -1,6 +1,13 @@
-<h1>Editing User</h1>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Editar Usuário</h4>
+  <ul>
+    <li><%= link_to("Usuários", users_path) %></li>
+    <li><%= @user.name %></li>
+  </ul>
+</div>
 
 <%= render 'form', user: @user %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="spacing"></div>
+
+<%= link_to 'Voltar', users_path %>
