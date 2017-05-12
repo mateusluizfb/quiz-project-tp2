@@ -4,6 +4,7 @@
   <thead>
     <tr>
       <th>Nome</th>
+      <th>Quantidade de Tópicos</th>
       <th></th>
       <th></th>
       <th></th>
@@ -22,6 +23,7 @@
             <%= link_to("Me inscrever", discipline_associate_path(discipline), class: 'btn btn-success btn-xs', method: :patch, remote: true) %>
           <% end %>
         </td>
+        <td><%= discipline.topics.size %></td>
         <td><%= link_to 'Exibir', discipline %></td>
         <td><%= link_to 'Editar', edit_discipline_path(discipline) %></td>
         <td><%= link_to 'Excluir', discipline, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
