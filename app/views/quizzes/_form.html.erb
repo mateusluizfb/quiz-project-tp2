@@ -1,15 +1,7 @@
-<%= form_for @quiz do |f| %>
-  <% if @quiz.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@quiz.errors.count, "error") %> prohibited this @quiz from being saved:</h2>
-
-      <ul>
-      <% @quiz.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= form_for ([@discipline, @topic, @quiz]) do |f| %>
+  
+  <%= render partial: 'layouts/error_messages', locals: { entity: quiz } %>
+  
   <div id="value"> <% @i = 0 %> </div>
   <%=f.label :name, "Nome: " %>
   <%=f.text_field :name %>

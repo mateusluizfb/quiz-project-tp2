@@ -1,6 +1,7 @@
-<h1>Editing Answer</h1>
+<h1>Editando Quiz</h1>
 
 <%= render 'form', quiz: @quiz %>
 
-<%= link_to 'Show', @quiz %> |
-<%= link_to 'Back', quizzes_path %>
+<div class="spacing"></div>
+
+<%= link_to 'Voltar',  discipline_topic_quizzes_path(@discipline, @topic) %>

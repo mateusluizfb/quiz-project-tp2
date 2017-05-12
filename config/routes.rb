@@ -16,10 +16,10 @@ Rails.application.routes.draw do
     patch 'disassociate'
     get 'export'
     
-    resources :topics
+    resources :topics do
+      resources :quizzes
+    end
   end
-
-  resources :topics
+  
   resources :users
-  resources :quizzes
 end
