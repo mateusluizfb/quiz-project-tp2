@@ -2,9 +2,10 @@
 
 <h1>Quizzes</h1>
 
-<table>
+<table class="table table-bordered table-hover datatable">
   <thead>
     <tr>
+      <th>Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +13,7 @@
   <tbody>
     <% @quizzes.each do |quiz| %>
       <tr>
+        <td><%= quiz.name %></td>
         <td><%= link_to 'Show', quiz %></td>
         <td><%= link_to 'Edit', edit_quiz_path(quiz) %></td>
         <td><%= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -22,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Quiz', new_quiz_path %>
+<%= link_to 'New Quiz', new_quiz_path, class: 'btn btn-embossed btn-success' %>
