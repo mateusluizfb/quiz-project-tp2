@@ -1,31 +1,32 @@
 <%= form_for(discipline) do |f| %>
-  <% if discipline.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(discipline.errors.count, "error") %> prohibited this discipline from being saved:</h2>
+  <% render partial: 'layouts/error_messages', locals: {entity: discipline} %>
 
-      <ul>
-      <% discipline.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
   </div>
 
   <div id="topics">
+    <h5>Tópicos: </h5>
     <%= f.fields_for :topics do |topic| %>
       <%= render 'topic_fields', f: topic %>
     <% end %>
+
     <div class="links">
-      <%= link_to_add_association 'add topic', f, :topics %>
+      <%= link_to_add_association 'Adicionar um tópico', f, :topics %>
     </div>
   </div>
 
+  <div class="spacing"></div>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Enviar', class: 'btn btn-embossed btn-success' %>
   </div>
+
+  <div class="spacing"></div>
+
 <% end %>

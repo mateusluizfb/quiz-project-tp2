@@ -1,4 +1,13 @@
 <div class="nested-fields">
-  <%= f.text_field :name %>
-  <%= link_to_remove_association 'remove topic', f %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="col-md-2">
+      <%= link_to_remove_association 'Remover', f, class: 'btn btn-warning' %>
+    </div>
+  </div>
+
+  <div class="spacing"></div>
+
 </div>

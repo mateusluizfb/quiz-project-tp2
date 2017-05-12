@@ -2,7 +2,7 @@
 
 <h1>Disciplines</h1>
 
-<table>
+<table class="table table-bordered table-hover datatable">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,9 +14,9 @@
     <% @disciplines.each do |discipline| %>
       <tr>
         <td><%= discipline.name %></td>
-        <td><%= link_to 'Show', discipline %></td>
-        <td><%= link_to 'Edit', edit_discipline_path(discipline) %></td>
-        <td><%= link_to 'Destroy', discipline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', discipline %></td>
+        <td><%= link_to 'Editar', edit_discipline_path(discipline) %></td>
+        <td><%= link_to 'Excluir', discipline, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Discipline', new_discipline_path %>
+<%= link_to 'New Discipline', new_discipline_path, class: 'btn btn-embossed btn-success' %>

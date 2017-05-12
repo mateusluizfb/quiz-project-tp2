@@ -1,18 +1,6 @@
 <%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
-    <div class="alert alert-info">
-      <button type="button" class="close fui-cross" data-dismiss="alert"></button>
-      <h4>Ops! Parece que algo está errado...</h4>
-      <p>Verifique as informações abaixo:</p>
-      <ul style='padding-top: .5em'>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
 
-      <a href="#" data-dismiss="alert" class="btn btn-info btn-embossed btn-wide">Certo</a>
-    </div>
-  <% end %>
+  <% render partial: 'layouts/error_messages', locals: {entity: user} %>
 
   <div class="row">
     <div class="col-md-4">
@@ -32,7 +20,7 @@
         <%= f.label :login %>
         <%= f.text_field :login, class: 'form-control' %>
       </div>
-    </div> 
+    </div>
   </div>
 
   <div class="row">
@@ -51,10 +39,10 @@
       <% end %>
     </div>
   </div>
-  
+
   <div class="form-group">
     <label class="checkbox" for="checkbox1">
-      <input type="checkbox" data-toggle="checkbox" value="" id="checkbox1" required>
+      <input type="checkbox" data-toggle="checkbox" value="" id="checkbox1">
       Administrador
     </label>
   </div>

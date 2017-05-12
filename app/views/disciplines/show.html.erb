@@ -1,18 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @discipline.name %>
-</p>
-
-<div>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Disciplina e Tópicos</h4>
   <ul>
-    <% @discipline.topics.each do |topic| %>
-      <li><%= link_to topic.name, topic_path(topic) %></li>
-    <% end %>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li><%= @discipline.name %></li>
   </ul>
-
 </div>
 
-<%= link_to 'Edit', edit_discipline_path(@discipline) %> |
-<%= link_to 'Back', disciplines_path %>
+<div class="jumbotron">
+  <p>
+    <strong>Nome: </strong>
+    <%= @discipline.name %>
+  </p>
+
+
+  <div>
+    <strong>Tópicos: </strong>
+    <ul>
+      <% @discipline.topics.each do |topic| %>
+      <li><%= link_to topic.name, topic_path(topic) %></li>
+      <% end %>
+    </ul>
+
+  </div>
+</div>
+
+<%= link_to 'Editar', edit_discipline_path(@discipline) %> |
+<%= link_to 'Voltar', disciplines_path %>
