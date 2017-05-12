@@ -1,9 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @topic.name %>
-</p>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Tópicos</h4>
+  <ul>
+    <li><%= link_to("Tópicos", topics_path) %></li>
+    <li><%= @topic.name %></li>
+  </ul>
+</div>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<div class="jumbotron">
+
+  <p>
+    <strong>Nome:</strong>
+    <%= @topic.name %>
+  </p>
+
+</div>
+
+<%= link_to 'Editar', edit_topic_path(@topic) %> |
+<%= link_to 'Voltar', topics_path %>

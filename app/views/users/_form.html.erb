@@ -1,6 +1,6 @@
 <%= form_for(user) do |f| %>
 
-  <% render partial: 'layouts/error_messages', locals: {entity: user} %>
+  <%= render partial: 'layouts/error_messages', locals: { entity: user } %>
 
   <div class="row">
     <div class="col-md-4">

@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Topics</h1>
+<h1>Topicos</h1>
 
-<table>
+<table class="table table-bordered table-hover datatable">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,9 +14,9 @@
     <% @topics.each do |topic| %>
       <tr>
         <td><%= topic.name %></td>
-        <td><%= link_to 'Show', topic %></td>
-        <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-        <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Exibir', topic %></td>
+        <td><%= link_to 'Editar', edit_topic_path(topic) %></td>
+        <td><%= link_to 'Excluir', topic, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Topic', new_topic_path %>
+<%= link_to 'Novo Tópico', new_topic_path, class: 'btn btn-embossed btn-success' %>
