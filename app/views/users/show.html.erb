@@ -18,12 +18,16 @@
   </p>
 
   <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p style="margin-bottom: 0">
     <strong>Admin: </strong>
     <%= @user.admin %>
   </p>
 
 </div>
-
 
 <%= link_to 'Editar', edit_user_path(@user), class: 'btn btn-embossed btn-success' %>
 <span>&nbsp;</span>

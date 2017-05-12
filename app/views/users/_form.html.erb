@@ -41,10 +41,10 @@
   </div>
 
   <div class="form-group">
-    <label class="checkbox" for="checkbox1">
-      <input type="checkbox" data-toggle="checkbox" value="" id="checkbox1">
-      Administrador
-    </label>
+    <%= f.label :admin, class: 'checkbox' do %>
+      <%= f.check_box :admin %>
+      <span>Administrador</span>
+    <% end %>
   </div>
 
   <div class="actions">

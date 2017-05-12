@@ -1,12 +1,11 @@
 <% content_for :title, "Usuários" %>
 
-<p id="notice"><%= notice %></p>
-
 <table class="table table-bordered table-hover datatable">
   <thead>
     <tr>
       <th>Nome</th>
       <th>Login</th>
+      <th>Email</th>
       <th>Admin?</th>
       <th></th>
       <th></th>
@@ -19,6 +18,7 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.login %></td>
+        <td><%= user.email %></td>
         <td><%= user.admin %></td>
         <td><%= link_to 'Exibir', user %></td>
         <td><%= link_to 'Editar', edit_user_path(user) %></td>
