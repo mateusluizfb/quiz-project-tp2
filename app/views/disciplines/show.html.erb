@@ -21,6 +21,8 @@
       <li><%= topic.name %></li>
       <% end %>
     </ul>
+    <br>
+    <%= link_to("Ver todos os tópicos", discipline_topics_path(@discipline), class: 'btn btn-embossed btn-info btn-sm') %>
   <% end %>
 </div>
 

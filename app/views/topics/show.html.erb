@@ -1,21 +1,22 @@
-<p id="notice"><%= notice %></p>
-
 <div class="breadcrumb-text ptl">
-  <h4 class="caption">Tópicos</h4>
+  <h4 class="caption">Detalhes do Tópico</h4>
   <ul>
-    <li><%= link_to("Tópicos", topics_path) %></li>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li><%= link_to(@discipline.name, discipline_path(@discipline)) %></li>
+    <li><%= link_to("Tópicos", discipline_topics_path(@discipline)) %></li>
     <li><%= @topic.name %></li>
   </ul>
 </div>
 
 <div class="jumbotron">
 
-  <p>
+  <p style='margin: 0'>
     <strong>Nome:</strong>
     <%= @topic.name %>
   </p>
 
 </div>
 
-<%= link_to 'Editar', edit_topic_path(@topic) %> |
-<%= link_to 'Voltar', topics_path %>
+<%= link_to 'Editar', edit_discipline_topic_path(@discipline, @topic), class: 'btn btn-embossed btn-success' %>
+<span>&nbsp;</span>
+<%= link_to 'Voltar', discipline_topics_path, class: 'btn btn-embossed btn-info' %>

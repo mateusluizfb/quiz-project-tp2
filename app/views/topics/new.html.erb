@@ -1,11 +1,13 @@
 <div class="breadcrumb-text ptl">
   <h4 class="caption">Criar Tópico</h4>
   <ul>
-    <li><%= link_to("Tópico", disciplines_path) %></li>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li><%= link_to(@discipline.name, discipline_path(@discipline)) %></li>
+    <li><%= link_to("Tópicos", discipline_topics_path(@discipline)) %></li>
     <li>Novo Tópico</li>
   </ul>
 </div>
 
 <%= render 'form', topic: @topic %>
 
-<%= link_to 'Voltar', topics_path %>
+<%= link_to 'Voltar', discipline_topics_path(@discipline) %>

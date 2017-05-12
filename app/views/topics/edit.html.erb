@@ -1,6 +1,15 @@
-<h1>Editing Topic</h1>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Editar Tópico</h4>
+  <ul>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li><%= link_to(@discipline.name, discipline_path(@discipline)) %></li>
+    <li><%= link_to("Tópicos", discipline_topics_path(@discipline)) %></li>
+    <li><%= @topic.name %></li>
+  </ul>
+</div>
 
 <%= render 'form', topic: @topic %>
 
-<%= link_to 'Exibir', @topic %> |
-<%= link_to 'Voltar', topics_path %>
+<div class="spacing"></div>
+
+<%= link_to 'Voltar', discipline_topics_path %>

@@ -1,9 +1,10 @@
-<h1>Disciplinas</h1>
+<h4>Disciplinas</h4>
 
 <table class="table table-bordered table-hover datatable">
   <thead>
     <tr>
       <th>Nome</th>
+      <th>Inscrição</th>
       <th>Quantidade de Tópicos</th>
       <th></th>
       <th></th>
@@ -14,9 +15,8 @@
   <tbody>
     <% @disciplines.each do |discipline| %>
       <tr>
+        <td><%= discipline.name %></td>
         <td>
-          <%= discipline.name %>
-          <span>&nbsp;</span>
           <% if current_user.disciplines.include? discipline %>
             <%= link_to("Me desinscrever", discipline_disassociate_path(discipline), class: 'btn btn-danger btn-xs', method: :patch, remote: true) %>
           <% else %>

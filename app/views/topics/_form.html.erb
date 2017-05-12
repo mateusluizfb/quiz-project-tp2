@@ -1,9 +1,9 @@
-<%= form_for(topic) do |f| %>
+<%= form_for([@discipline, topic]) do |f| %>
 
   <%= render partial: 'layouts/error_messages', locals: { entity: topic } %>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
       <div class="form-group">
         <%= f.label 'Nome' %>
         <%= f.text_field :name, class: 'form-control' %>

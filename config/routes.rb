@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :disciplines do
     patch 'associate'
     patch 'disassociate'
+    
+    resources :topics
   end
 
   resources :topics

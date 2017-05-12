@@ -1,12 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Topicos</h1>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Tópicos</h4>
+  <ul>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li><%= link_to(@discipline.name, discipline_path(@discipline)) %></li>
+    <li>Tópicos</li>
+  </ul>
+</div>
 
 <table class="table table-bordered table-hover datatable">
   <thead>
     <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
+      <th>Nome</th>
+      <th></th>
+      <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -14,14 +21,14 @@
     <% @topics.each do |topic| %>
       <tr>
         <td><%= topic.name %></td>
-        <td><%= link_to 'Exibir', topic %></td>
-        <td><%= link_to 'Editar', edit_topic_path(topic) %></td>
-        <td><%= link_to 'Excluir', topic, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
+        <td><%= link_to 'Exibir', discipline_topic_path(@discipline, topic) %></td>
+        <td><%= link_to 'Editar', edit_discipline_topic_path(@discipline, topic) %></td>
+        <td><%= link_to 'Excluir', discipline_topic_path(@discipline, topic), method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<br><br><br>
 
-<%= link_to 'Novo Tópico', new_topic_path, class: 'btn btn-embossed btn-success' %>
+<%= link_to 'Novo Tópico', new_discipline_topic_path, class: 'btn btn-embossed btn-success' %>
