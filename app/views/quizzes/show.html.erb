@@ -1,10 +1,10 @@
 <div class="breadcrumb-text ptl">
-  <h4 class="caption">Detalhes do Tópico</h4>
+  <h4 class="caption">Quizzes</h4>
   <ul>
     <li><%= link_to("Disciplinas", disciplines_path) %></li>
     <li><%= link_to(@discipline.name, discipline_path(@discipline)) %></li>
     <li><%= link_to("Tópicos", discipline_topics_path(@discipline)) %></li>
-    <li><%= @topic.name %></li>
+    <li><%= link_to(@topic.name, discipline_topic_path(@discipline, @topic)) %></li>
     <li><%= link_to("Quizzes", discipline_topic_quizzes_path(@discipline, @topic)) %></li>
     <li><%= @quiz.name %></li>
   </ul>

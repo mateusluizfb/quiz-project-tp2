@@ -69,6 +69,16 @@ class DisciplinesController < ApplicationController
     end
   end
 
+  def export
+    @discipline = Discipline.find(params[:discipline_id])
+
+    send_file(export_discipline(@discipline))
+  end
+
+  def export_all
+    send_file(export_disciplines(Discipline.all))
+  end
+
   # DELETE /disciplines/1
   # DELETE /disciplines/1.json
   def destroy

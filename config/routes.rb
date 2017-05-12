@@ -9,9 +9,12 @@ Rails.application.routes.draw do
 
   get '/dashboard' => 'static_pages#dashboard'
 
+  get 'disciplines/export_all' => 'disciplines#export_all'
+
   resources :disciplines do
     patch 'associate'
     patch 'disassociate'
+    get 'export'
     
     resources :topics do
       resources :quizzes

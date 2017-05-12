@@ -6,6 +6,7 @@
       <th>Nome</th>
       <th>Inscrição</th>
       <th>Quantidade de Tópicos</th>
+      <th>Exportar Tópicos</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,9 +19,9 @@
         <td><%= discipline.name %></td>
         <td>
           <% if current_user.disciplines.include? discipline %>
-            <%= link_to("Me desinscrever", discipline_disassociate_path(discipline), class: 'btn btn-danger btn-xs', method: :patch, remote: true) %>
+            <%= link_to("Me desinscrever", discipline_disassociate_path(discipline), class: 'btn btn-embossed btn-danger btn-xs', method: :patch, remote: true) %>
           <% else %>
-            <%= link_to("Me inscrever", discipline_associate_path(discipline), class: 'btn btn-success btn-xs', method: :patch, remote: true) %>
+            <%= link_to("Me inscrever", discipline_associate_path(discipline), class: 'btn btn-embossed btn-success btn-xs', method: :patch, remote: true) %>
           <% end %>
         </td>
         <td>
@@ -28,6 +29,7 @@
           <span>&nbsp;&nbsp;</span>
           <%= link_to("Visualizar tópicos", discipline_topics_path(discipline) , class: 'btn btn-info btn-embossed btn-xs') %>
         </td>
+        <td><%= link_to("Exportar", discipline_export_path(discipline), class: 'btn btn-success btn-embossed btn-xs') %></td>
         <td><%= link_to 'Exibir', discipline %></td>
         <td><%= link_to 'Editar', edit_discipline_path(discipline) %></td>
         <td><%= link_to 'Excluir', discipline, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
@@ -41,3 +43,5 @@
 <br>
 
 <%= link_to 'Nova Disciplina', new_discipline_path, class: 'btn btn-embossed btn-success' %>
+<span>&nbsp;</span>
+<%= link_to("Exportar Todas as Disciplinas", disciplines_export_all_path, class: 'btn btn-embossed btn-inverse') %>
