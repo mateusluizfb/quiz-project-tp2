@@ -1,6 +1,11 @@
-<h1>Editing Discipline</h1>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Editar Disciplina</h4>
+  <ul>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li><%= @discipline.name %></li>
+  </ul>
+</div>
 
 <%= render 'form', discipline: @discipline %>
-
-<%= link_to 'Exibir', @discipline %> |
+<div class="spacing"></div>
 <%= link_to 'Voltar', disciplines_path %>

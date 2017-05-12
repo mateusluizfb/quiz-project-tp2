@@ -1,2 +1,20 @@
-<h1>StaticPages#dashboard</h1>
-<p>Find me in app/views/static_pages/dashboard.html.erb</p>
+<h4>
+  Bem-vindo(a)
+  <%= current_user.name %>
+</h4>
+
+<br>
+
+<div class="jumbotron">
+  <% if current_user.disciplines.empty? %>
+    <p>Você não possui nenhuma disciplina.</p>
+  <% else %>
+    <h6>Suas disciplinas:</h6>
+    <ul>
+      <% current_user.disciplines.each do |discipline| %>
+        <li><%= discipline.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <%= link_to("Me cadastrar em uma disciplina", disciplines_path, class: 'btn btn-embossed btn-info') %>
+</div>

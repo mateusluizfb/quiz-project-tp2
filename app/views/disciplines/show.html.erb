@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <div class="breadcrumb-text ptl">
   <h4 class="caption">Disciplina e Tópicos</h4>
   <ul>
@@ -13,18 +11,19 @@
     <strong>Nome: </strong>
     <%= @discipline.name %>
   </p>
-
-
-  <div>
-    <strong>Tópicos: </strong>
-    <ul>
+  
+  <% if @discipline.topics.empty? %>
+    <p>Essa disciplina não possui nenhum tópico cadastrado.</p>
+  <% else %>
+    <p><strong>Tópicos:</strong></p>
+    <ul style='margin: 0'>
       <% @discipline.topics.each do |topic| %>
-      <li><%= link_to topic.name, topic_path(topic) %></li>
+      <li><%= topic.name %></li>
       <% end %>
     </ul>
-
-  </div>
+  <% end %>
 </div>
 
-<%= link_to 'Editar', edit_discipline_path(@discipline) %> |
-<%= link_to 'Voltar', disciplines_path %>
+<%= link_to 'Editar', edit_discipline_path(@discipline), class: 'btn btn-embossed btn-success' %>
+<span>&nbsp;</span>
+<%= link_to 'Voltar', disciplines_path, class: 'btn btn-embossed btn-info' %>
