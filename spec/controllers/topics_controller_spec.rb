@@ -36,84 +36,77 @@ RSpec.describe TopicsController, type: :controller do
       get :show, params: { id: 1 }
       expect(response).to render_template('show')
     end
+  end
 
-    describe 'GET #edit' do
-
-      it 'Responde 200 OK' do
-        responde_ok
-      end
-
-      it 'Renderiza a página edit' do
-        Topic.create(name: 'teste')
-        get :edit, params: { id: 1 }
-        expect(response).to render_template('edit')
-      end
-
+  describe 'GET #edit' do
+    it 'Responde 200 OK' do
+      responde_ok
     end
 
-    describe 'GET #create' do
-      context 'Parâmetros válidos' do
+    it 'Renderiza a página edit' do
+      Topic.create(name: 'teste')
+      get :edit, params: { id: 1 }
+      expect(response).to render_template('edit')
+    end
+  end
 
-        it 'Cria um usuário' do
-          expect {
-            post :create, params: {
-              topic: {
-                name: 'teste1'
-              }
-            }
-          }.to change(Topic, :count).by(1)
-        end
+  describe 'GET #create' do
+    context 'Parâmetros válidos' do
 
-        it 'Redirecionar para show' do
+      it 'Cria um usuário' do
+        expect {
           post :create, params: {
             topic: {
               name: 'teste1'
             }
           }
-          expect(response).to redirect_to Topic.last
-        end
-
-      end
-    end
-
-    describe 'PATCH/PUT #update' do
-
-      it 'Atualizar via put' do
-        Topic.create(id: 1, name: 'teste1')
-        put :update, params: {
-          id: 1,
-          topic: {
-            name: 'teste2'
-          }
-        }
-        expect(Topic.find(1).name).to eq('teste2')
+        }.to change(Topic, :count).by(1)
       end
 
-      it 'Atualizar via patch' do
-        Topic.create(id: 1, name: 'teste1')
-        put :update, params: {
-          id: 1,
+      it 'Redirecionar para show' do
+        post :create, params: {
           topic: {
-            name: 'teste2'
+            name: 'teste1'
           }
         }
-        expect(Topic.find(1).name).to eq('teste2')
+        expect(response).to redirect_to Topic.last
       end
 
     end
-
-    describe 'DELETE #delete' do
-
-      it 'Remover disciplina' do
-        Topic.create(id: 1, name: 'teste1')
-        expect {
-          delete :destroy, params: {
-            id: 1
-          }
-        }.to change(Topic, :count).by(-1)
-      end
-
-
   end
 
+  describe 'PATCH/PUT #update' do
+    it 'Atualizar via put' do
+      Topic.create(id: 1, name: 'teste1')
+      put :update, params: {
+        id: 1,
+        topic: {
+          name: 'teste2'
+        }
+      }
+      expect(Topic.find(1).name).to eq('teste2')
+    end
+
+    it 'Atualizar via patch' do
+      Topic.create(id: 1, name: 'teste1')
+      put :update, params: {
+        id: 1,
+        topic: {
+          name: 'teste2'
+        }
+      }
+      expect(Topic.find(1).name).to eq('teste2')
+    end
+  end
+
+  describe 'DELETE #delete' do
+    it 'Remover disciplina' do
+      Topic.create(id: 1, name: 'teste1')
+      expect {
+        delete :destroy, params: {
+          id: 1
+        }
+      }.to change(Topic, :count).by(-1)
+    end
+  end
 end
