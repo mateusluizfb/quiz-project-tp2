@@ -23,6 +23,8 @@
     </ul>
     <br>
     <%= link_to("Ver todos os tópicos", discipline_topics_path(@discipline), class: 'btn btn-embossed btn-info btn-sm') %>
+    <span>&nbsp;</span>
+    <%= link_to("Exportar tópicos", discipline_export_path(@discipline), class: 'btn btn-inverse btn-embossed btn-sm') %>
   <% end %>
 </div>
 
