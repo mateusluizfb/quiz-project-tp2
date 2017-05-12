@@ -12,5 +12,19 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require flat-ui-pro
+//= require html5shiv
+//= require respond.min
+//= require video
 //= require turbolinks
+//= require cocoon
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  $('table').dataTable({
+    'dom': '<"top">rt<"pull-left spacing"f><"pull-right spacing"p><"clear">',
+    "language": { "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese.json"}
+  });
+
+  $(':checkbox').radiocheck();
+});
