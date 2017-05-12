@@ -4,21 +4,25 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    check_admin
     @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    check_user(@user)
   end
 
   # GET /users/new
   def new
+    check_admin
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    check_user(@user)
   end
 
   # POST /users
@@ -74,5 +78,13 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email, :login, :password, :password_confirmation, :admin)
+    end
+
+    def check_admin
+      redirect_to dashboard_path unless current_user.admin?
+    end
+
+    def check_user(user)
+      redirect_to dashboard_path if current_user != user
     end
 end
