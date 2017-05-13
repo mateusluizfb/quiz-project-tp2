@@ -2,18 +2,29 @@
   
   <%= render partial: 'layouts/error_messages', locals: { entity: quiz } %>
   
-  <div id="value"> <% @i = 0 %> </div>
-  <%=f.label :name, "Nome: " %>
-  <%=f.text_field :name %>
-  <div class="jumbotron">
-  <div id="questions">
-    <%=f.fields_for :questions do |question| %>
-      <%= render 'question_fields', f: question%>
-    <%end%>
-    <%= link_to_add_association 'Adicionar Questão', f , :questions, {class: 'fui-plus-circle'} %>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group">
+        <%= f.label :name, "Nome" %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+    </div>
   </div>
-</div>
+
+  <div id="questions">
+    <h5>Questões:</h5>
+
+    <%= f.fields_for :questions do |question| %>
+      <%= render 'question_fields', f: question%>
+    <% end %>
+    <div class="links">
+      <br>
+      <%= link_to_add_association 'Adicionar Questão', f, :questions, class: 'btn btn-embossed btn-info' %>
+    </div>
+  </div>
+
+  <br>
   <div class="actions">
-    <%=f.submit "Criar Quiz", {class: 'btn btn-success'} %>
+    <%=f.submit "Enviar", class: 'btn btn-embossed btn-success' %>
   </div>
 <% end %>

@@ -1,4 +1,14 @@
-<h1>Editando Quiz</h1>
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Atualizar Quiz</h4>
+  <ul>
+    <li><%= link_to("Disciplinas", disciplines_path) %></li>
+    <li><%= link_to(@discipline.name, discipline_path(@discipline)) %></li>
+    <li><%= link_to("Tópicos", discipline_topics_path(@discipline)) %></li>
+    <li><%= link_to(@topic.name, discipline_topic_path(@discipline, @topic)) %></li>
+    <li><%= link_to("Quizzes", discipline_topic_quizzes_path(@discipline, @topic)) %></li>
+    <li><%= @quiz.name %></li>
+  </ul>
+</div>
 
 <%= render 'form', quiz: @quiz %>
 
