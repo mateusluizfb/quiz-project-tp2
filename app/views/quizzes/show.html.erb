@@ -17,6 +17,25 @@
     <%= @quiz.name %>
   </p>
 
+  <% if @quiz.questions.empty? %>
+    <p>Esse quiz não possui nenhuma questão cadastrada.</p>
+  <% else %>
+    <p><strong>Questões:</strong></p>
+    <form action="/evaluate" method="post">
+      <ol style='margin: 0'>
+        <% @quiz.questions.shuffle.each do |question| %>
+        <li><%= question.statement %></li>
+          <% question.answers.shuffle.each_with_index do |answer, index|%>
+            <%= radio_button_tag(answer.question_id, index)%>
+            <label style="margin-right: 10px"><%= answer.text %></label>
+          <% end %>
+        <% end %>
+      </ol>
+      <input type="submit" value="Submeter">
+    </form>
+    <br>
+  <% end %>
+
 </div>
 
 <%= link_to 'Editar', edit_discipline_topic_quiz_path(@discipline, @topic, @quiz), class: 'btn btn-embossed btn-success' %>
