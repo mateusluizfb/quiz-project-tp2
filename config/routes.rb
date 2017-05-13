@@ -21,5 +21,6 @@ Rails.application.routes.draw do
     end
   end
   
+  post '/evaluate' => 'quizzes#evaluate'
   resources :users
 end
