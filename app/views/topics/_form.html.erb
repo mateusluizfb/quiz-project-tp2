@@ -12,6 +12,7 @@
 
   <div id="quizzes">
     <h5>Quizzes: </h5>
+    
     <%= f.fields_for :quizzes do |quiz| %>
       <%= render 'quiz_fields', f: quiz %>
     <% end %>
