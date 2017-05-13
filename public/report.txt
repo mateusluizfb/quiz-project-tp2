@@ -1,0 +1,11 @@
+0.1|1312|bla|{adsad, 2331231, 12313}
+0.2|1312|bla|
+0.3|1312|blabla|
+0.4|1312|OIE|
+0.5|1312|bla|{1, 2, 3}
+1.1|TP1|Testes|
+1.2|TP1|Mais testes|
+2.1|Matemática|Adição|{Somando com o Wladi, Somando com o Rafael}
+2.2|Matemática|Multiplicação|
+2.3|Matemática|Subtração|
+2.4|Matemática|Divisão|
