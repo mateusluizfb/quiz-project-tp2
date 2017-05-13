@@ -27,4 +27,5 @@ $(document).on('turbolinks:load', function() {
   });
 
   $(':checkbox').radiocheck();
+  $(':radio').radiocheck();
 });

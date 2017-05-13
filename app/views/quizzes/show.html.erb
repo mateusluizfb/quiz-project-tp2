@@ -22,18 +22,25 @@
   <% else %>
     <p><strong>Questões:</strong></p>
     <form action="/evaluate" method="post">
+      <%= hidden_field_tag 'discipline_id', @discipline.id %>
+      <%= hidden_field_tag 'topic_id', @topic.id %>
+      <%= hidden_field_tag 'quiz_id', @quiz.id %>
+
       <ol style='margin: 0'>
         <% @quiz.questions.shuffle.each do |question| %>
         <li><%= question.statement %></li>
           <% question.answers.shuffle.each_with_index do |answer, index|%>
-            <%= radio_button_tag(answer.question_id, index)%>
-            <label style="margin-right: 10px"><%= answer.text %></label>
+            <div class="radio">
+              <label style="margin-top: -6px; padding-left: 0">
+                <%= radio_button_tag('questions[' + "#{answer.question_id}" + ']', answer.id)%>
+                <%= answer.text %>
+              </label>
+            </div>
           <% end %>
         <% end %>
       </ol>
-      <input type="submit" value="Submeter">
+      <input type="submit" value="Submeter Respostas" class="btn btn-embossed btn-success">
     </form>
-    <br>
   <% end %>
 
 </div>

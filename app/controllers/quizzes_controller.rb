@@ -1,7 +1,8 @@
 class QuizzesController < ApplicationController
-  before_action :set_discipline
-  before_action :set_topic
+  before_action :set_discipline, except: [:evaluate]
+  before_action :set_topic, except: [:evaluate]
   before_action :set_quiz, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /quizzes
   # GET /quizzes.json
@@ -64,7 +65,7 @@ class QuizzesController < ApplicationController
   end
 
   def evaluate
-    
+    render text: params
   end
 
   private
