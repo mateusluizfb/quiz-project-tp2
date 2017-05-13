@@ -13,7 +13,7 @@
     </ul>
   <% end %>
 
-  <p><strong>Sua nota: <%= @nota %></strong></p>
+  <p><strong>Sua nota: <%= @nota.round(2) %></strong></p>
 
   <%= link_to("Ir para a página inicial", dashboard_path, class: 'btn btn-success btn-wide btn-embossed') %>
 </div>

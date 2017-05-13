@@ -2,12 +2,13 @@ class QuizzesController < ApplicationController
   before_action :set_discipline, except: [:evaluate]
   before_action :set_topic, except: [:evaluate]
   before_action :set_quiz, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
   # GET /quizzes
   # GET /quizzes.json
   def index
-    @quizzes = Quiz.all
+    @quizzes = @topic.quizzes
   end
 
   # GET /quizzes/1
