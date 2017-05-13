@@ -1,0 +1,14 @@
+<div class="nested-fields">
+  <div class="row">
+    <div class="col-md-4">
+      <%= f.select :id, @quizlist, class: 'form-control' %>
+    </div>
+
+    <div class="col-md-2">
+      <%= link_to_remove_association 'Remover', f, class: 'btn btn-warning' %>
+    </div>
+  </div>
+
+  <div class="spacing"></div>
+
+</div>
