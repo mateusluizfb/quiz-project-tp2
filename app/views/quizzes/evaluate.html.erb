@@ -1,0 +1,20 @@
+<h4>Relatório da Sua Avaliação</h4>
+
+<div class="jumbotron">
+  <% @answers.each do |question, answers| %>
+    <p>Questão: <%= question %></p>
+    <ul>
+      <li>Questão marcada: <%= answers[:marked] %></li>
+      <li>Questão correta: <%= answers[:correct] %></li>
+
+      <% if answers[:marked] == answers[:correct] %>
+        <p>Parabéns, você acertou essa questão!</p>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p><strong>Sua nota: <%= @nota %></strong></p>
+
+  <%= link_to("Ir para a página inicial", dashboard_path, class: 'btn btn-success btn-wide btn-embossed') %>
+</div>
+  

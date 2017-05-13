@@ -65,7 +65,29 @@ class QuizzesController < ApplicationController
   end
 
   def evaluate
-    render text: params
+    @answers = {}
+    @questions_number = params[:questions].count
+    @correct_answers = 0
+
+    params[:questions].each do |question_id, answer_id|
+      question = Question.find(question_id)
+      marked_answer = Answer.find(answer_id)
+      correct_answer = question.answers.where(correct_option: true).first
+
+      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text }
+    end
+
+    @answers.each do |question, answers|
+      if answers[:marked] == answers[:correct]
+        @correct_answers += 1
+      end
+    end
+
+    @nota = (@correct_answers/@questions_number.to_f) * 10
+    
+    respond_to do |format|
+      format.html { render 'evaluate' }
+    end
   end
 
   private
