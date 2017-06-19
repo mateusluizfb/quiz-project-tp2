@@ -6,16 +6,32 @@ RSpec.describe DisciplinesController, type: :controller do
   end
 
   describe 'GET #index' do
+
+    let(:user) {
+      User.create!(
+        email: 'email@email.com',
+        password: '123456',
+        name: 'Fulano',
+        login: 'username',
+        admin: false
+      )
+    }
+
+    let(:discipline) { Discipline.create! id: 1, name: 'APC' }
+
     it 'Responde 200 OK' do
       responde_ok
     end
 
     it 'Renderiza a página index das Disciplinas' do
-      get :index
+      sign_in user
+      get :index, params: { id: discipline.id }
       expect(response).to render_template('index')
     end
 
     it 'Carrega todas as disciplinas' do
+      sign_in user
+
       discipline1, discipline2 = Discipline.create(name: 'teste1'), Discipline.create(name: 'teste2')
       get :index
       expect(assigns(:disciplines)).to match_array([discipline1, discipline2])
