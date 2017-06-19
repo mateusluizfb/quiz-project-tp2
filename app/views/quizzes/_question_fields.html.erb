@@ -9,13 +9,21 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <%= f.label :score, "Pontuação" %>
+    <br>
+    <div class="col-md-1">
+      <%= f.text_field :score, class: 'form-control ' %>
+    </div>
+  </div>
+  <br>
+
   <div id="answers">
     <%= f.fields_for :answers do |answer| %>
       <%= render 'answer_fields', f:  answer%>
     <% end %>
 
     <div class="links">
-      <br>
       <%= link_to_add_association 'Adicionar Alternativa', f, :answers, class: 'btn btn-info btn-embossed btn-sm' %>
     </div>
   </div>

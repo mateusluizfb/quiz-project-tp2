@@ -68,24 +68,26 @@ class QuizzesController < ApplicationController
   def evaluate
     @answers = {}
     @questions_number = params[:questions].count
-    @correct_answers = 0
+    @total_value = 0
 
     params[:questions].each do |question_id, answer_id|
       question = Question.find(question_id)
       marked_answer = Answer.find(answer_id)
       correct_answer = question.answers.where(correct_option: true).first
 
-      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text }
+      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text, value: question.score }
     end
 
     @answers.each do |question, answers|
       if answers[:marked] == answers[:correct]
-        @correct_answers += 1
+        @total_value += answers[:value]
       end
     end
 
-    @nota = (@correct_answers/@questions_number.to_f) * 10
-    
+    ## Transformar pra base 10 ##
+    @nota = @total_value
+    # @nota = (@total_value/@questions_number.to_f) * 10
+
     respond_to do |format|
       format.html { render 'evaluate' }
     end
@@ -108,7 +110,7 @@ class QuizzesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def quiz_params
       params.require(:quiz).permit(:name,
-                                    questions_attributes: [:id, :statement , :_destroy,
+                                    questions_attributes: [:id, :statement , :score, :_destroy,
                                     answers_attributes:   [:id, :text, :correct_option, :_destroy]  ] )
     end
 end
