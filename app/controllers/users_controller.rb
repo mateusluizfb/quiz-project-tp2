@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: %i[show edit update destroy]
 
   # GET /users
   # GET /users.json
@@ -71,21 +71,22 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:name, :email, :login, :password, :password_confirmation, :admin)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    def check_admin
-      redirect_to dashboard_path unless current_user.admin?
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:name, :email, :login, :password, :password_confirmation, :admin)
+  end
 
-    def check_user(user)
-      redirect_to dashboard_path if current_user != user
-    end
+  def check_admin
+    redirect_to dashboard_path unless current_user.admin?
+  end
+
+  def check_user(user)
+    redirect_to dashboard_path if current_user != user
+  end
 end

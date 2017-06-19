@@ -29,7 +29,6 @@ class QuizzesController < ApplicationController
   # POST /quizzes.json
   def create
     @quiz = @topic.quizzes.build(quiz_params)
-
     respond_to do |format|
       if @quiz.save
         format.html { redirect_to discipline_topic_quiz_path(@discipline, @topic, @quiz), notice: 'Quiz was successfully created.' }
@@ -75,7 +74,7 @@ class QuizzesController < ApplicationController
       marked_answer = Answer.find(answer_id)
       correct_answer = question.answers.where(correct_option: true).first
 
-      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text }
+      @answers[question.statement] = {marked: marked_answer.text, correct: correct_answer.text }
     end
 
     @answers.each do |question, answers|
@@ -85,30 +84,29 @@ class QuizzesController < ApplicationController
     end
 
     @nota = (@correct_answers/@questions_number.to_f) * 10
-    
+
     respond_to do |format|
       format.html { render 'evaluate' }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_quiz
-      @quiz = Quiz.find(params[:id])
-    end
 
-    def set_discipline
-      @discipline = Discipline.find(params[:discipline_id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_quiz
+    @quiz = Quiz.find(params[:id])
+  end
 
-    def set_topic
-      @topic = Topic.find(params[:topic_id])
-    end
+  def set_discipline
+    @discipline = Discipline.find(params[:discipline_id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def quiz_params
-      params.require(:quiz).permit(:name,
-                                    questions_attributes: [:id, :statement , :_destroy,
-                                    answers_attributes:   [:id, :text, :correct_option, :_destroy]  ] )
-    end
+  def set_topic
+    @topic = Topic.find(params[:topic_id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def quiz_params
+    params.require(:quiz).permit(:name, questions_attributes: %i[id statement _destroy answers_attributes: %i[id text correct_option _destroy]])
+  end
 end

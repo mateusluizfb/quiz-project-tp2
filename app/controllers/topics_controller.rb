@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
   before_action :set_discipline
   before_action :authenticate_user!
-  before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :set_topic, only: %i[show edit update destroy]
 
   # GET /topics
   # GET /topics.json
@@ -30,7 +30,7 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to discipline_topic_path(@discipline, @topic), notice: 'Topic was successfully created.' }
+        format.html { redirect_to discipline_topic_path(@discipline, @topic), notice: 'Topic was successfully created.'}
         format.json { render :show, status: :created, location: @topic }
       else
         format.html { render :new }
@@ -44,7 +44,7 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { redirect_to discipline_topic_path(@discipline, @topic), notice: 'Topic was successfully updated.' }
+        format.html { redirect_to discipline_topic_path(@discipline, @topic), notice: 'Topic was successfully updated.'}
         format.json { render :show, status: :ok, location: @topic }
       else
         format.html { render :edit }
@@ -82,17 +82,18 @@ class TopicsController < ApplicationController
   end
 
   private
-    def set_discipline
-      @discipline = Discipline.find(params[:discipline_id])
-    end
 
-    # Use callbacks to share common setup or constraints between actions.
-    def set_topic
-      @topic = Topic.find(params[:id])
-    end
+  def set_discipline
+    @discipline = Discipline.find(params[:discipline_id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def topic_params
-      params.require(:topic).permit(:name, quizzes_attributes: [:id, :name, :_destroy])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_topic
+    @topic = Topic.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def topic_params
+    params.require(:topic).permit(:name, quizzes_attributes: %i[id name _destroy])
+  end
 end
