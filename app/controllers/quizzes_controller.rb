@@ -69,23 +69,32 @@ class QuizzesController < ApplicationController
     @answers = {}
     @questions_number = params[:questions].count
     @total_value = 0
+    @user_score = 0
 
     params[:questions].each do |question_id, answer_id|
       question = Question.find(question_id)
       marked_answer = Answer.find(answer_id)
       correct_answer = question.answers.where(correct_option: true).first
+      question_score = question.score
 
-      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text, value: question.score }
+      if question_score == nil
+        question_score = 1
+      end
+
+      @total_value += question_score
+
+      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text, value: question_score }
     end
 
     @answers.each do |question, answers|
       if answers[:marked] == answers[:correct]
-        @total_value += answers[:value]
+        @user_score += answers[:value]
       end
     end
 
     ## Transformar pra base 10 ##
-    @nota = @total_value
+
+    @nota = ((@user_score * 100) / @total_value) / 10
     # @nota = (@total_value/@questions_number.to_f) * 10
 
     respond_to do |format|
