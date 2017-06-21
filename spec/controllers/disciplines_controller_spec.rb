@@ -1,21 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe DisciplinesController, type: :controller do
+
+  let(:user) {
+    User.create!(
+      email: 'email@email.com',
+      password: '123456',
+      name: 'Fulano',
+      login: 'username',
+      admin: false
+    )
+  }
+
   def responde_ok
     expect(response).to have_http_status(200)
   end
 
   describe 'GET #index' do
-
-    let(:user) {
-      User.create!(
-        email: 'email@email.com',
-        password: '123456',
-        name: 'Fulano',
-        login: 'username',
-        admin: false
-      )
-    }
 
     let(:discipline) { Discipline.create! id: 1, name: 'APC' }
 
@@ -44,6 +45,8 @@ RSpec.describe DisciplinesController, type: :controller do
     end
 
     it 'Renderiza a página show' do
+      sign_in user
+
       Discipline.create(name: 'teste1')
       get :show, params: { id: 1 }
       expect(response).to render_template('show')
@@ -56,6 +59,8 @@ RSpec.describe DisciplinesController, type: :controller do
     end
 
     it 'Renderiza a página new' do
+      sign_in user
+
       get :new
       expect(response).to render_template('new')
     end
@@ -67,6 +72,8 @@ RSpec.describe DisciplinesController, type: :controller do
     end
 
     it 'Renderiza a página edit' do
+      sign_in user
+
       Discipline.create(name: 'teste')
       get :edit, params: { id: 1 }
       expect(response).to render_template('edit')
@@ -74,8 +81,11 @@ RSpec.describe DisciplinesController, type: :controller do
   end
 
   describe 'GET #create' do
+
     context 'Parâmetros válidos' do
       it 'Cria um usuário' do
+        sign_in user
+
         expect {
           post :create, params: {
             discipline: {
@@ -86,6 +96,8 @@ RSpec.describe DisciplinesController, type: :controller do
       end
 
       it 'Redirecionar para show' do
+        sign_in user
+
         post :create, params: {
           discipline: {
             name: 'teste1'
@@ -98,6 +110,8 @@ RSpec.describe DisciplinesController, type: :controller do
 
   describe 'PATCH/PUT #update' do
     it 'Atualizar via put' do
+      sign_in user
+
       Discipline.create(id: 1, name: 'teste1')
       put :update, params: {
         id: 1,
@@ -109,6 +123,8 @@ RSpec.describe DisciplinesController, type: :controller do
     end
 
     it 'Atualizar via patch' do
+      sign_in user
+
       Discipline.create(id: 1, name: 'teste1')
       put :update, params: {
         id: 1,
@@ -122,6 +138,8 @@ RSpec.describe DisciplinesController, type: :controller do
 
   describe 'DELETE #delete' do
     it 'Remover disciplina' do
+      sign_in user
+
       Discipline.create(id: 1, name: 'teste1')
       expect {
         delete :destroy, params: {
