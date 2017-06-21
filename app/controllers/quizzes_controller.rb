@@ -67,23 +67,34 @@ class QuizzesController < ApplicationController
   def evaluate
     @answers = {}
     @questions_number = params[:questions].count
-    @correct_answers = 0
+    @total_value = 0
+    @user_score = 0
 
     params[:questions].each do |question_id, answer_id|
       question = Question.find(question_id)
       marked_answer = Answer.find(answer_id)
       correct_answer = question.answers.where(correct_option: true).first
+      question_score = question.score
 
-      @answers[question.statement] = {marked: marked_answer.text, correct: correct_answer.text }
+      if question_score == nil
+        question_score = 1
+      end
+
+      @total_value += question_score
+      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text, value: question_score }
+
     end
 
     @answers.each do |question, answers|
       if answers[:marked] == answers[:correct]
-        @correct_answers += 1
+        @user_score += answers[:value]
       end
     end
 
-    @nota = (@correct_answers/@questions_number.to_f) * 10
+    ## Transformar pra base 10 ##
+    @nota = ((@user_score * 100) / @total_value) / 10
+    @user_quiz = UserQuiz.create(user_id: current_user.id, quiz_id: params[:quiz_id], score: @nota)
+    @user_quiz.save
 
     respond_to do |format|
       format.html { render 'evaluate' }
@@ -101,6 +112,14 @@ class QuizzesController < ApplicationController
     @discipline = Discipline.find(params[:discipline_id])
   end
 
+<<<<<<< HEAD
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def quiz_params
+      params.require(:quiz).permit(:name,
+                                    questions_attributes: [:id, :statement , :score, :_destroy,
+                                    answers_attributes:   [:id, :text, :correct_option, :_destroy]  ] )
+    end
+=======
   def set_topic
     @topic = Topic.find(params[:topic_id])
   end
@@ -109,4 +128,5 @@ class QuizzesController < ApplicationController
   def quiz_params
     params.require(:quiz).permit(:name, questions_attributes: %i[id statement _destroy answers_attributes: %i[id text correct_option _destroy]])
   end
+>>>>>>> 66d6ab3354652d659de42700645ebf4a4f3b2e69
 end
