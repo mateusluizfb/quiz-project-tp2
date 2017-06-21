@@ -93,9 +93,9 @@ class QuizzesController < ApplicationController
     end
 
     ## Transformar pra base 10 ##
-
     @nota = ((@user_score * 100) / @total_value) / 10
-    # @nota = (@total_value/@questions_number.to_f) * 10
+    @user_quiz = UserQuiz.create(user_id: current_user.id, quiz_id: params[:quiz_id], score: @nota)
+    @user_quiz.save
 
     respond_to do |format|
       format.html { render 'evaluate' }
