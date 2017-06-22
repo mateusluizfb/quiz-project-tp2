@@ -6,16 +6,16 @@
 <br>
 
 <div class="jumbotron">
-  <% if current_user.disciplines.empty? %>
-    <p>Você não possui nenhuma disciplina.</p>
+  <% if current_user.notebook.disciplines.empty? %>
+    <p>Você não possui nenhuma disciplina em seu caderno.</p>
   <% else %>
-    <h6>Suas disciplinas:</h6>
+    <h6>Seu caderno:</h6>
     <ul>
-      <% current_user.disciplines.each do |discipline| %>
+      <% current_user.notebook.disciplines.each do |discipline| %>
         <li><%= link_to discipline.name, discipline_path(discipline) %></li>
       <% end %>
     </ul>
     <br>
   <% end %>
-  <%= link_to("Me cadastrar em uma disciplina", disciplines_path, class: 'btn btn-embossed btn-info') %>
+  <%= link_to("Adicionar disciplinas ao meu caderno", disciplines_path, class: 'btn btn-embossed btn-info') %>
 </div>

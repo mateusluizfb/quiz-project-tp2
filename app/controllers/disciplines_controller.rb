@@ -29,6 +29,8 @@ class DisciplinesController < ApplicationController
 
     respond_to do |format|
       if @discipline.save
+        current_user.notebook.disciplines << @discipline
+        
         format.html { redirect_to @discipline, notice: 'Discipline was successfully created.' }
         format.json { render :show, status: :created, location: @discipline }
       else
@@ -56,7 +58,7 @@ class DisciplinesController < ApplicationController
     @discipline = Discipline.find(params[:discipline_id])
 
     respond_to do |format|
-      current_user.disciplines << @discipline
+      current_user.notebook.disciplines << @discipline
       format.js
     end
   end
@@ -65,7 +67,7 @@ class DisciplinesController < ApplicationController
     @discipline = Discipline.find(params[:discipline_id])
 
     respond_to do |format|
-      current_user.disciplines.delete(@discipline)
+      current_user.notebook.disciplines.delete(@discipline)
       format.js
     end
   end

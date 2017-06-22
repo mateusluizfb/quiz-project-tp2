@@ -112,21 +112,10 @@ class QuizzesController < ApplicationController
     @discipline = Discipline.find(params[:discipline_id])
   end
 
-<<<<<<< HEAD
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def quiz_params
-      params.require(:quiz).permit(:name,
-                                    questions_attributes: [:id, :statement , :score, :_destroy,
-                                    answers_attributes:   [:id, :text, :correct_option, :_destroy]  ] )
-    end
-=======
-  def set_topic
-    @topic = Topic.find(params[:topic_id])
-  end
-
   # Never trust parameters from the scary internet, only allow the white list through.
   def quiz_params
-    params.require(:quiz).permit(:name, questions_attributes: %i[id statement _destroy answers_attributes: %i[id text correct_option _destroy]])
+    params.require(:quiz).permit(:name,
+                                  questions_attributes: [:id, :statement , :score, :_destroy,
+                                  answers_attributes:   [:id, :text, :correct_option, :_destroy]  ] )
   end
->>>>>>> 66d6ab3354652d659de42700645ebf4a4f3b2e69
 end

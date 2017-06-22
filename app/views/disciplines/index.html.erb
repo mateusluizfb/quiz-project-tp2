@@ -18,10 +18,10 @@
       <tr>
         <td><%= discipline.name %></td>
         <td>
-          <% if current_user.disciplines.include? discipline %>
-            <%= link_to("Me desinscrever", discipline_disassociate_path(discipline), class: 'btn btn-embossed btn-danger btn-xs', method: :patch, remote: true) %>
+          <% if current_user.notebook.disciplines.include? discipline %>
+            <%= link_to("Remover do meu caderno", discipline_disassociate_path(discipline), class: 'btn btn-embossed btn-danger btn-xs', method: :patch, remote: true) %>
           <% else %>
-            <%= link_to("Me inscrever", discipline_associate_path(discipline), class: 'btn btn-embossed btn-success btn-xs', method: :patch, remote: true) %>
+            <%= link_to("Adicionar ao meu caderno", discipline_associate_path(discipline), class: 'btn btn-embossed btn-success btn-xs', method: :patch, remote: true) %>
           <% end %>
         </td>
         <td>
