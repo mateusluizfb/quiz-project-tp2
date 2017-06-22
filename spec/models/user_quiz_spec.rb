@@ -2,14 +2,26 @@ require 'rails_helper'
 
 RSpec.describe UserQuiz, type: :model do
 
-  it 'Create valid Quiz' do
-    quiz = Quiz.create! id: 1, name: 'Quanto é 1 + 1?'
-    expect(quiz.id).to eq(1)
+  let(:valid_attributes) {
+    {
+      name: 'Quiz de APC'
+    }
+  }
+
+  let(:invalid_attributes) {
+    {
+      name: nil
+    }
+  }
+
+  it 'Is valid with valid attributes' do
+    quiz = Quiz.new valid_attributes
+    expect(quiz).to be_valid
   end
 
-  it 'Quiz is invalid with invalid attributes' do
-    quiz = Quiz.new
-    expect(quiz).not_to be_valid
+  it 'Is invalid with invalid attributes' do
+    quiz = Quiz.new invalid_attributes
+    expect(quiz).to_not be_valid
   end
 
 end
