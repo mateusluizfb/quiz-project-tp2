@@ -6,6 +6,10 @@ class Question < ApplicationRecord
   # Este método estabelece o relacionameto 1-N com o questionário
   belongs_to :quiz
 
+  validates :statement, presence: true
+  validates :score, presence: true
+  validates :quiz_id, presence: true
+
   ##
   # Este método estabelece o relacionamento 1-N com
   # resposta e com exclusão em cascata

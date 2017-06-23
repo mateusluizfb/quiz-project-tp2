@@ -20,7 +20,7 @@ module DisciplinesHelper
     file.path
   end
 
-  def export_disciplines(disciplines)
+  def export_disciplines(disciplines) # rubocop:disable Metrics/AbcSize
     file = File.new('public/report.txt', 'w')
 
     disciplines.each_with_index do |discipline, _|
