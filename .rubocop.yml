@@ -135,3 +135,11 @@ Style/Documentation:
 # This is just silly. Calling the argument `other` in all cases makes no sense.
 Style/OpMethod:
   Enabled: false
+
+Style/AsciiComments:
+  Exclude:
+    - 'app/**/*'
+
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'app/controllers/users/**/*'

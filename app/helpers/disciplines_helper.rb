@@ -7,11 +7,7 @@ module DisciplinesHelper
         quizzes = '{'
 
         topic.quizzes.each do |quiz|
-          unless topic.quizzes.last == quiz
-            quizzes += '#{quiz.name}, '
-          else
-            quizzes += quiz.name
-          end
+          quizzes = topic.quizzes.last == quiz ? '#{quiz.name}, ' : quiz.name
         end
 
         quizzes += '}'
@@ -21,7 +17,6 @@ module DisciplinesHelper
     end
 
     file.close
-
     file.path
   end
 
@@ -30,15 +25,11 @@ module DisciplinesHelper
 
     disciplines.each_with_index do |discipline, _|
       discipline.topics.each_with_index do |topic, _|
-        unless topic.quizzes.empty?
+        if topic.quizzes.empty?
           quizzes = '{'
 
           topic.quizzes.each do |quiz|
-            unless topic.quizzes.last == quiz
-              quizzes += '#{quiz.name}, '
-            else
-              quizzes += quiz.name
-            end
+            quizzes = topic.quizzes.last == quiz ? '#{quiz.name}, ' : quiz.name
           end
 
           quizzes += '}'
@@ -49,7 +40,6 @@ module DisciplinesHelper
     end
 
     file.close
-
     file.path
   end
 end

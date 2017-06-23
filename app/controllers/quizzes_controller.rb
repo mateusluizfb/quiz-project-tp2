@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
   before_action :set_discipline, except: [:evaluate]
   before_action :set_topic, except: [:evaluate]
-  before_action :set_quiz, only: [:show, :edit, :update, :destroy]
+  before_action :set_quiz, only: %i[show edit update destroy]
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
@@ -27,11 +27,13 @@ class QuizzesController < ApplicationController
 
   # POST /quizzes
   # POST /quizzes.json
-  def create
+  def create # rubocop:disable Metrics/AbcSize
     @quiz = @topic.quizzes.build(quiz_params)
     respond_to do |format|
       if @quiz.save
-        format.html { redirect_to discipline_topic_quiz_path(@discipline, @topic, @quiz), notice: 'Quiz was successfully created.' }
+        format.html {
+          redirect_to discipline_topic_quiz_path(@discipline, @topic, @quiz), notice: 'Quiz was successfully created.'
+        }
         format.json { render :show, status: :created, location: @quiz }
       else
         format.html { render :new }
@@ -45,7 +47,9 @@ class QuizzesController < ApplicationController
   def update
     respond_to do |format|
       if @quiz.update(quiz_params)
-        format.html { redirect_to discipline_topic_quiz_path(@discipline, @topic, @quiz), notice: 'Quiz was successfully updated.' }
+        format.html {
+          redirect_to discipline_topic_quiz_path(@discipline, @topic, @quiz), notice: 'Quiz was successfully updated.'
+        }
         format.json { render :show, status: :ok, location: @quiz }
       else
         format.html { render :edit }
@@ -59,7 +63,9 @@ class QuizzesController < ApplicationController
   def destroy
     @quiz.destroy
     respond_to do |format|
-      format.html { redirect_to discipline_topic_quizzes_path(@discipline, @topic), notice: 'Quiz was successfully destroyed.' }
+      format.html {
+        redirect_to discipline_topic_quizzes_path(@discipline, @topic), notice: 'Quiz was successfully destroyed.'
+      }
       format.json { head :no_content }
     end
   end
@@ -86,6 +92,7 @@ class QuizzesController < ApplicationController
     @discipline = Discipline.find(params[:discipline_id])
   end
 
+<<<<<<< HEAD
     # Never trust parameters from the scary internet, only allow the white list through.
     def quiz_params
         params.require(:quiz).permit(:name,
@@ -95,5 +102,15 @@ class QuizzesController < ApplicationController
 
   def set_topic
     @topic = Topic.find(params[:topic_id])
+=======
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def quiz_params
+    params.require(:quiz).permit(
+      :name,
+      questions_attributes: [
+        :id, :statement, :score, :_destroy, answers_attributes: %i[id text correct_option _destroy]
+      ]
+    )
+>>>>>>> 9ca7dec589590f70263717b4681f10b93f5869c2
   end
 end

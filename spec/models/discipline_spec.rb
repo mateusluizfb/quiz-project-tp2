@@ -6,18 +6,16 @@ RSpec.describe Discipline, type: :model do
     expect(discipline).not_to be_valid
   end
 
-  it "belongs to many users" do
+  it "belongs to many notebooks" do
     discipline = Discipline.new(name: 'new discipline')
     discipline.save
 
     user1 = User.create(name: 'user 1', login: 'user 1', email: 'user1@example.com', password: 'user123')
     user2 = User.create(name: 'user 2', login: 'user 2', email: 'user2@example.com', password: 'user123')
   
-    discipline.users << user1
-    discipline.users << user2
+    user1.notebook.disciplines << discipline
+    user2.notebook.disciplines << discipline
 
-    discipline.save
-
-    expect(discipline.users.count).to eq(2)
+    expect(discipline.notebooks.count).to eq(2)
   end
 end

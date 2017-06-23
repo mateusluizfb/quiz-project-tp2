@@ -1,8 +1,19 @@
+##
+# Esta classe representa a entidade questionário, que pertence à um tópico
+# de uma disciplina e possui muitas questões
 class Quiz < ApplicationRecord
+  ##
+  # Este método estabelece o relacionamento 1-N com tópico
   belongs_to :topic
+
+  ##
+  # Este método estabelece o relacionamento 1-N com
+  # questões e com exclusão em cascata
   has_many :questions, dependent: :destroy, inverse_of: :quiz
+
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
+<<<<<<< HEAD
   def self.evaluate(questions, user, quiz_id)
     @answers = {}
     @questions_number = questions.count
@@ -36,4 +47,9 @@ class Quiz < ApplicationRecord
 
   end
 
+=======
+  ##
+  # Nome obrigatório
+  validates :name, presence: true
+>>>>>>> 9ca7dec589590f70263717b4681f10b93f5869c2
 end

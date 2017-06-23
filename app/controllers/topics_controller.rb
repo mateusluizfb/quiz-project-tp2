@@ -25,12 +25,13 @@ class TopicsController < ApplicationController
 
   # POST /topics
   # POST /topics.json
-  def create
+  def create # rubocop:disable Metrics/AbcSize
     @topic = @discipline.topics.build(topic_params)
-
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to discipline_topic_path(@discipline, @topic), notice: 'Topic was successfully created.'}
+        format.html {
+          redirect_to discipline_topic_path(@discipline, @topic), notice: 'Topic was successfully created.'
+        }
         format.json { render :show, status: :created, location: @topic }
       else
         format.html { render :new }
@@ -44,7 +45,9 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { redirect_to discipline_topic_path(@discipline, @topic), notice: 'Topic was successfully updated.'}
+        format.html {
+          redirect_to discipline_topic_path(@discipline, @topic), notice: 'Topic was successfully updated.'
+        }
         format.json { render :show, status: :ok, location: @topic }
       else
         format.html { render :edit }
