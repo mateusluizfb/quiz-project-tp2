@@ -35,4 +35,11 @@ RSpec.describe User, type: :model do
 
     expect(user.teams.count).to eq(2)
   end
+
+  it 'creates a notebook for user' do
+    user = User.new(name: 'user', login: 'user', email: 'user@example.com', password: 'user123')
+    user.create_notebook
+
+    expect(user.notebook).to be_a(Notebook)
+  end
 end

@@ -3,7 +3,7 @@
 - Wladimir Ganzelevitch Mesquita Gramacho - 15/0048718
 - Gabriel Almeida Campos - 15/0009887
 - Rafael Alves Fernandes - 14/0030395
-- Mateus Luiz Freitas Barros - Matricula a confirmar
+- Mateus Luiz Freitas Barros - 15/0140801
 
 ### Como inicializar o projeto
 
