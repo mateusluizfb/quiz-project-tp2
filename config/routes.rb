@@ -15,12 +15,12 @@ Rails.application.routes.draw do
     patch 'associate'
     patch 'disassociate'
     get 'export'
-    
+
     resources :topics do
       resources :quizzes
     end
   end
-  
+  get '/user_history' => 'users#history'
   post '/evaluate' => 'quizzes#evaluate'
   resources :users
 end

@@ -68,6 +68,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def history
+    @user = current_user
+    @quizzes = UserQuiz.where(user_id: current_user.id)
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
