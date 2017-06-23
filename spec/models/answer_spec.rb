@@ -4,7 +4,7 @@ RSpec.describe Answer, type: :model do
   let(:valid_attributes) {
     {
       text: 'Letra a',
-      correct_option: false
+      correct_option: true
     }
   }
 
@@ -17,6 +17,7 @@ RSpec.describe Answer, type: :model do
 
   it 'Is valid with valid attributes' do
       answer = Answer.new valid_attributes
+      byebug
       expect(answer).to be_valid
   end
 
