@@ -16,22 +16,9 @@ RSpec.describe Notebook, type: :model do
       user_id: user.id
     }
   }
-
-  let(:invalid_attributes) {
-    {
-      user_id: nil
-    }
-  }
-
+  
   it 'Is valid with valid attributes' do
     notebook = Notebook.new valid_attributes
     expect(notebook).to be_valid
   end
-
-  it 'Is invalid with invalid attributes' do
-    notebook = Notebook.new invalid_attributes
-    expect(notebook).to_not be_valid
-  end
-
-
 end

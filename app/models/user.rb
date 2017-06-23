@@ -7,7 +7,6 @@ class User < ApplicationRecord
   has_one :notebook
 
   has_and_belongs_to_many :teams
-  has_and_belongs_to_many :disciplines
 
   after_create :create_notebook
 

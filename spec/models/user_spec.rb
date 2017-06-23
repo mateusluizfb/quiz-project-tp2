@@ -21,21 +21,6 @@ RSpec.describe User, type: :model do
     expect(user).not_to be_valid
   end
 
-  it "belongs to many disciplines" do
-    user = User.new(name: 'user', login: 'user', email: 'user@example.com', password: 'user123')
-    user.save
-
-    discipline_1 = Discipline.create(name: 'discipline 1')
-    discipline_2 = Discipline.create(name: 'discipline 2')
-
-    user.disciplines << discipline_1
-    user.disciplines << discipline_2
-
-    user.save
-
-    expect(user.disciplines.count).to eq(2)
-  end
-
   it "belongs to many teams" do
     user = User.new(name: 'user', login: 'user', email: 'user@example.com', password: 'user123')
     user.save
