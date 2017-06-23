@@ -1,0 +1,24 @@
+<div class="breadcrumb-text ptl">
+  <h4 class="caption">Histórico do Usuário</h4>
+  <ul>
+    <li><%= link_to("Usuários", users_path) %></li>
+    <li><%= @user.name %></li>
+  </ul>
+</div>
+
+  <% @quizzes.each do |quiz| %>
+  <div class="jumbotron">
+    <p>
+      <strong>Nome do Quiz:</strong>
+      <%= Quiz.find(quiz.quiz_id).name %>
+    </p>
+
+    <p>
+      <strong>Nota:</strong>
+      <%= quiz.score %>
+    </p>
+  </div>
+  <%end %>
+
+<span>&nbsp;</span>
+<%= link_to 'Voltar', "/dashboard", class: 'btn btn-embossed btn-info' %>
