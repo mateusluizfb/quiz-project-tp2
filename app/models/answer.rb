@@ -6,9 +6,5 @@ class Answer < ApplicationRecord
   # Texto obrigatório
   validates_presence_of :text, presence: true
 
-  ##
-  # Opção correta obrigatório
-  validates_presence_of :correct_option, presence: true
-
   belongs_to :question
 end

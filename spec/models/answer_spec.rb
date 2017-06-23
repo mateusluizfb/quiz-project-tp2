@@ -4,7 +4,7 @@ RSpec.describe Answer, type: :model do
   let(:valid_attributes) {
     {
       text: 'Letra a',
-      correct_option: false
+      correct_option: true
     }
   }
 
