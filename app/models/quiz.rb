@@ -30,21 +30,13 @@ class Quiz < ApplicationRecord
       marked_answer = Answer.find(answer_id)
       correct_answer = question.answers.where(correct_option: true).first
 
-<<<<<<< HEAD
       question_score = question.score.nil? ? 1 : question.score
-=======
-      question.score.nil? ? question_score = 1 : question_score = question.score
->>>>>>> 2386f969fa2626121231aeb05c149abfd35beba8
 
       @total_value += question_score
       @answers[question.statement] = {marked: marked_answer.text, correct: correct_answer.text, value: question_score}
     end
 
-<<<<<<< HEAD
     @answers.each do |_, answers|
-=======
-    @answers.each do |_question, answers|
->>>>>>> 2386f969fa2626121231aeb05c149abfd35beba8
       @user_score += answers[:value] if answers[:marked] == answers[:correct]
     end
 

@@ -27,7 +27,7 @@ class QuizzesController < ApplicationController
 
   # POST /quizzes
   # POST /quizzes.json
-  def create
+  def create # rubocop:disable Metrics/AbcSize
     @quiz = @topic.quizzes.build(quiz_params)
     respond_to do |format|
       if @quiz.save
