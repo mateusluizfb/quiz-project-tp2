@@ -1,27 +1,40 @@
+##
+# This class is used to control the requisitions Answer gets through its views.
+
 class AnswersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_answer, only: %i[show edit update destroy]
 
+  ##
+  # Shows index of all answers.
   # GET /answers
   # GET /answers.json
   def index
     @answers = Answer.all
   end
 
+  ##
+  # Shows an specific answer.
   # GET /answers/1
   # GET /answers/1.json
   def show
   end
 
+  ##
+  # Form to create new answer.
   # GET /answers/new
   def new
     @answer = Answer.new
   end
 
+  ##
+  # Edit specific answer.
   # GET /answers/1/edit
   def edit
   end
 
+  ##
+  # Creates an answer and tries to save it to the database.
   # POST /answers
   # POST /answers.json
   def create
@@ -38,6 +51,8 @@ class AnswersController < ApplicationController
     end
   end
 
+  ##
+  # Updates answer on database.
   # PATCH/PUT /answers/1
   # PATCH/PUT /answers/1.json
   def update
@@ -52,6 +67,8 @@ class AnswersController < ApplicationController
     end
   end
 
+  ##
+  # Deletes specific answer.
   # DELETE /answers/1
   # DELETE /answers/1.json
   def destroy

@@ -1,7 +1,12 @@
+##
+# This class is used to control the requisitions User gets through its views.
+
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: %i[show edit update destroy]
 
+  ##
+  # Shows index of all users after checking if user is admin.
   # GET /users
   # GET /users.json
   def index
@@ -9,23 +14,31 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  ##
+  # Shows an specific user.
   # GET /users/1
   # GET /users/1.json
   def show
     check_user(@user)
   end
 
+  ##
+  # Form to create a new user after checking if user is admin.
   # GET /users/new
   def new
     check_admin
     @user = User.new
   end
 
+  ##
+  # Edit specific user.
   # GET /users/1/edit
   def edit
     check_user(@user)
   end
 
+  ##
+  # Creates an user and tries to save it to the database.
   # POST /users
   # POST /users.json
   def create
@@ -42,6 +55,8 @@ class UsersController < ApplicationController
     end
   end
 
+  ##
+  # Updates user on database.
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update # rubocop:disable Metrics/AbcSize
@@ -58,6 +73,8 @@ class UsersController < ApplicationController
     end
   end
 
+  ##
+  # Deletes user on database.
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy

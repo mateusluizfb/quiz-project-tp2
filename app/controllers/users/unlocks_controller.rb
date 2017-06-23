@@ -1,3 +1,6 @@
+##
+# Controller created by Devise gem. No methods were used.
+
 class Users::UnlocksController < Devise::UnlocksController
   # GET /resource/unlock/new
   # def new

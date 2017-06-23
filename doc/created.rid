@@ -1,12 +1,14 @@
-Fri, 23 Jun 2017 18:34:53 -0300
-app/models/team.rb	Fri, 23 Jun 2017 15:18:48 -0300
-app/models/user.rb	Fri, 23 Jun 2017 18:24:29 -0300
-app/models/discipline.rb	Fri, 23 Jun 2017 15:01:15 -0300
-app/models/application_record.rb	Fri, 23 Jun 2017 14:52:15 -0300
-app/models/topic.rb	Fri, 23 Jun 2017 18:24:29 -0300
-app/models/answer.rb	Fri, 23 Jun 2017 18:24:29 -0300
-app/models/question.rb	Fri, 23 Jun 2017 18:24:29 -0300
-app/models/ability.rb	Fri, 23 Jun 2017 14:48:29 -0300
-app/models/quiz.rb	Fri, 23 Jun 2017 18:31:28 -0300
-app/models/notebook.rb	Fri, 23 Jun 2017 18:24:29 -0300
-app/models/user_quiz.rb	Fri, 23 Jun 2017 18:29:19 -0300
+Fri, 23 Jun 2017 21:01:43 -0300
+app/controllers/users/confirmations_controller.rb	Fri, 23 Jun 2017 19:26:27 -0300
+app/controllers/users/unlocks_controller.rb	Fri, 23 Jun 2017 19:26:27 -0300
+app/controllers/users/omniauth_callbacks_controller.rb	Fri, 23 Jun 2017 19:26:27 -0300
+app/controllers/users/sessions_controller.rb	Fri, 23 Jun 2017 19:26:27 -0300
+app/controllers/users/registrations_controller.rb	Fri, 23 Jun 2017 19:26:27 -0300
+app/controllers/users/passwords_controller.rb	Fri, 23 Jun 2017 19:26:27 -0300
+app/controllers/disciplines_controller.rb	Fri, 23 Jun 2017 21:00:38 -0300
+app/controllers/topics_controller.rb	Fri, 23 Jun 2017 20:56:09 -0300
+app/controllers/static_pages_controller.rb	Fri, 23 Jun 2017 20:40:31 -0300
+app/controllers/quizzes_controller.rb	Fri, 23 Jun 2017 21:00:32 -0300
+app/controllers/answers_controller.rb	Fri, 23 Jun 2017 20:22:38 -0300
+app/controllers/users_controller.rb	Fri, 23 Jun 2017 21:01:20 -0300
+app/controllers/application_controller.rb	Fri, 23 Jun 2017 19:26:27 -0300

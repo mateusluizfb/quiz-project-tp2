@@ -1,3 +1,6 @@
+##
+# Controller created by Devise gem. No methods were used.
+
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]

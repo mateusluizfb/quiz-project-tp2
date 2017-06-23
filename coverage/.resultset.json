@@ -1,7 +1,11 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/controllers/disciplines_controller_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/controllers/disciplines_controller_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -154,7 +158,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/rails_helper.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/rails_helper.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         1,
         1,
@@ -215,14 +223,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/environment.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/environment.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         1,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/application.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/application.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -242,12 +258,20 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/boot.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/boot.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/environments/test.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/environments/test.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         null,
@@ -291,7 +315,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/application_controller_renderer.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/application_controller_renderer.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -299,7 +327,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/assets.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/assets.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -312,7 +344,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/backtrace_silencers.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/backtrace_silencers.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -321,14 +357,22 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/cookies_serializer.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/cookies_serializer.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/devise.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/devise.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         1,
@@ -604,13 +648,21 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/filter_parameter_logging.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/filter_parameter_logging.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
         1
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/inflections.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/inflections.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -628,13 +680,21 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/mime_types.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/mime_types.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/new_framework_defaults.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/new_framework_defaults.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -660,12 +720,20 @@
         null,
         1
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/session_store.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/session_store.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         1
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/initializers/wrap_parameters.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/initializers/wrap_parameters.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -681,6 +749,9 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/helpers/disciplines_helper.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/helpers/answers_helper.rb": [
         1,
         null
@@ -690,6 +761,7 @@
         null
       ],
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/helpers/disciplines_helper.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         1,
         0,
@@ -736,6 +808,9 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/config/routes.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/helpers/static_pages_helper.rb": [
         1,
         null
@@ -749,6 +824,7 @@
         null
       ],
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/config/routes.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         1,
         null,
@@ -776,7 +852,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/user.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/user.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -818,7 +898,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/application_record.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/application_record.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -828,29 +912,18 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/controllers/disciplines_controller.rb": [
+        null,
+        null,
+        null,
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/controllers/disciplines_controller.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         1,
         1,
         null,
-        null,
-        null,
-        1,
-        2,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
         null,
         null,
         null,
@@ -858,7 +931,51 @@
         1,
         2,
         null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
         2,
+        null,
+        2,
+        2,
+        2,
+        4,
+        2,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
         2,
         2,
         4,
@@ -873,13 +990,12 @@
         null,
         null,
         1,
-        2,
-        2,
-        4,
-        2,
+        0,
         null,
         0,
         0,
+        0,
+        null,
         null,
         null,
         null,
@@ -893,13 +1009,6 @@
         null,
         null,
         null,
-        1,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
         null,
         null,
         1,
@@ -908,8 +1017,12 @@
         0,
         null,
         null,
+        null,
+        null,
         1,
         0,
+        null,
+        null,
         null,
         null,
         null,
@@ -937,7 +1050,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/controllers/application_controller.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/controllers/application_controller.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         1,
         null,
@@ -948,10 +1065,17 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/controllers/topics_controller_spec.rb": [
+
+      ],
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/controllers/users_controller_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/controllers/topics_controller_spec.rb": [
 
       ],
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/controllers/users_controller_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -980,7 +1104,14 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/controllers/users_controller.rb": [
+        null,
+        null,
+        null,
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/controllers/users_controller.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         1,
         1,
@@ -1077,7 +1208,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/models/answer_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/models/answer_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -1106,7 +1241,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/answer.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/answer.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -1118,7 +1257,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/models/discipline_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/models/discipline_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -1141,7 +1284,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/discipline.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/discipline.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -1161,7 +1308,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/models/notebook_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/models/notebook_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -1187,7 +1338,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/notebook.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/notebook.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -1201,7 +1356,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/models/question_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/models/question_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -1236,7 +1395,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/question.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/question.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -1256,7 +1419,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/models/team_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/models/team_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -1278,7 +1445,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/team.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/team.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -1292,7 +1463,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/models/topic_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/models/topic_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -1328,7 +1503,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/topic.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/topic.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -1349,7 +1528,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/models/user_quiz_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/models/user_quiz_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -1378,7 +1561,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/user_quiz.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/user_quiz.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         1,
@@ -1386,7 +1573,11 @@
         1,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/spec/models/user_spec.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/spec/models/user_spec.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         1,
         null,
         1,
@@ -1426,7 +1617,11 @@
         null,
         null
       ],
+<<<<<<< HEAD
+      "/home/wladimir/Documents/UnB/Matérias/Técnicas de Programação 2/quiz-project-tp2/app/models/quiz.rb": [
+=======
       "/home/mateusluizfb/Documents/Github/quiz-project-tp2/app/models/quiz.rb": [
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
         null,
         null,
         null,
@@ -1479,6 +1674,14 @@
         null
       ]
     },
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "timestamp": 1498262331
+=======
+    "timestamp": 1498262516
+>>>>>>> 7065354a3852f0e30d639049d5d49b2c8c12c127
+=======
     "timestamp": 1498252390
+>>>>>>> 03e5dccb2d1661c9a6f0e1d82d3019e817f00aae
   }
 }

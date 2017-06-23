@@ -1,28 +1,41 @@
+##
+# This class is used to control the requisitions Topic gets through its views.
+
 class TopicsController < ApplicationController
   before_action :set_discipline
   before_action :authenticate_user!
   before_action :set_topic, only: %i[show edit update destroy]
 
+  ##
+  # Shows index of all topics.
   # GET /topics
   # GET /topics.json
   def index
     @topics = @discipline.topics
   end
 
+  ##
+  # Shows an specific topic.
   # GET /topics/1
   # GET /topics/1.json
   def show
   end
 
+  ##
+  # Form to create new topic.
   # GET /topics/new
   def new
     @topic = Topic.new
   end
 
+  ##
+  # Edit specific topic.
   # GET /topics/1/edit
   def edit
   end
 
+  ##
+  # Creates an topic and tries to save it to the database.
   # POST /topics
   # POST /topics.json
   def create # rubocop:disable Metrics/AbcSize
@@ -40,6 +53,8 @@ class TopicsController < ApplicationController
     end
   end
 
+  ##
+  # Updates topic on database.
   # PATCH/PUT /topics/1
   # PATCH/PUT /topics/1.json
   def update
@@ -56,6 +71,8 @@ class TopicsController < ApplicationController
     end
   end
 
+  ##
+  # Associates a Topic to an User's Topics.
   def associate
     @topic = Topic.find(params[:topic_id])
 
@@ -65,6 +82,8 @@ class TopicsController < ApplicationController
     end
   end
 
+  ##
+  # Disassociates a Topic to an User's Topics.
   def disassociate
     @topic = Topic.find(params[:topic_id])
 
@@ -74,6 +93,8 @@ class TopicsController < ApplicationController
     end
   end
 
+  ##
+  # Deletes specific topic.
   # DELETE /topics/1
   # DELETE /topics/1.json
   def destroy

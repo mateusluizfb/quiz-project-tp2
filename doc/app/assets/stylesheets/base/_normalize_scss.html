@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>_normalize.scss - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script src="../../../../js/jquery.js"></script>
+<script src="../../../../js/darkfish.js"></script>
+
+<link href="../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../../../README_md.html">README</a>
+  
+    <li><a href="../../../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../../../app/assets/config/manifest_js.html">manifest.js</a>
+  
+    <li><a href="../../../../app/assets/fonts/glyphicons/flat-ui-pro-icons-regular_svg.html">flat-ui-pro-icons-regular.svg</a>
+  
+    <li><a href="../../../../app/assets/fonts/glyphicons/selection_json.html">selection.json</a>
+  
+    <li><a href="../../../../app/assets/fonts/lato/lato-black_svg.html">lato-black.svg</a>
+  
+    <li><a href="../../../../app/assets/fonts/lato/lato-bold_svg.html">lato-bold.svg</a>
+  
+    <li><a href="../../../../app/assets/fonts/lato/lato-bolditalic_svg.html">lato-bolditalic.svg</a>
+  
+    <li><a href="../../../../app/assets/fonts/lato/lato-italic_svg.html">lato-italic.svg</a>
+  
+    <li><a href="../../../../app/assets/fonts/lato/lato-light_svg.html">lato-light.svg</a>
+  
+    <li><a href="../../../../app/assets/fonts/lato/lato-regular_svg.html">lato-regular.svg</a>
+  
+    <li><a href="../../../../app/assets/javascripts/answers_coffee.html">answers.coffee</a>
+  
+    <li><a href="../../../../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/cable_js.html">cable.js</a>
+  
+    <li><a href="../../../../app/assets/javascripts/static_pages_coffee.html">static_pages.coffee</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/ambience/_colors_scss.html">_colors.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/ambience/_fonts_scss.html">_fonts.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/answers_scss.html">answers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/application_scss.html">application.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/_helpers_scss.html">_helpers.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/_normalize_scss.html">_normalize.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/_reusables_scss.html">_reusables.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/_typography_scss.html">_typography.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/base/_unclassed_scss.html">_unclassed.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/components/_breadcrumb_scss.html">_breadcrumb.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/components/_datatables_scss.html">_datatables.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/components/_header_scss.html">_header.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/components/_login-box_scss.html">_login-box.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/scaffolds_scss.html">scaffolds.scss</a>
+  
+    <li><a href="../../../../app/assets/stylesheets/static_pages_scss.html">static_pages.scss</a>
+  
+    <li><a href="../../../../app/views/answers/_answer_json_jbuilder.html">_answer.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/answers/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/answers/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/disciplines/_discipline_json_jbuilder.html">_discipline.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/disciplines/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/disciplines/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/quizzes/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/quizzes/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/topics/_topic_json_jbuilder.html">_topic.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/topics/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/topics/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/users/_user_json_jbuilder.html">_user.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/users/index_json_jbuilder.html">index.json.jbuilder</a>
+  
+    <li><a href="../../../../app/views/users/show_json_jbuilder.html">show.json.jbuilder</a>
+  
+    <li><a href="../../../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../../../coverage/assets/0_10_1/application_css.html">application.css</a>
+  
+    <li><a href="../../../../coverage/assets/0_10_1/application_js.html">application.js</a>
+  
+    <li><a href="../../../../coverage/index_html.html">index.html</a>
+  
+    <li><a href="../../../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../../../log/test_log.html">test.log</a>
+  
+    <li><a href="../../../../public/404_html.html">404.html</a>
+  
+    <li><a href="../../../../public/422_html.html">422.html</a>
+  
+    <li><a href="../../../../public/500_html.html">500.html</a>
+  
+    <li><a href="../../../../public/apple-touch-icon-precomposed_png.html">apple-touch-icon-precomposed.png</a>
+  
+    <li><a href="../../../../public/apple-touch-icon_png.html">apple-touch-icon.png</a>
+  
+    <li><a href="../../../../public/assets/application-14c398dfeb2e622df1c3f0bb2de4342e1ecc5439c4e670c7dacd5c7c37414e0d_js.html">application-14c398dfeb2e622df1c3f0bb2de4342e1ecc5439c4e670c7dacd5c7c37414e0d.js</a>
+  
+    <li><a href="../../../../public/assets/application-67d4f32741c22f4cec05a486ee64fa0ba383c486e9eb62a79b431ace5b9598c0_css.html">application-67d4f32741c22f4cec05a486ee64fa0ba383c486e9eb62a79b431ace5b9598c0.css</a>
+  
+    <li><a href="../../../../public/assets/fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4_svg.html">fontawesome-webfont-ad6157926c1622ba4e1d03d478f1541368524bfc46f51e42fe0d945f7ef323e4.svg</a>
+  
+    <li><a href="../../../../public/assets/glyphicons/flat-ui-pro-icons-regular-d8e3e342162b0eb6ad4ac8531bb11d833a153c2b1d8849fed7020e28b1de84ff_svg.html">flat-ui-pro-icons-regular-d8e3e342162b0eb6ad4ac8531bb11d833a153c2b1d8849fed7020e28b1de84ff.svg</a>
+  
+    <li><a href="../../../../public/assets/glyphicons/selection-40d1fd429002870d997e9434b5aec4eb4874d6fae252120b1c3ef0d5ccc96928_json.html">selection-40d1fd429002870d997e9434b5aec4eb4874d6fae252120b1c3ef0d5ccc96928.json</a>
+  
+    <li><a href="../../../../public/assets/lato/lato-black-e68dd99c183a51d28dcbffa5310c71085517af4fdb58e6093d4d37f8dd48a708_svg.html">lato-black-e68dd99c183a51d28dcbffa5310c71085517af4fdb58e6093d4d37f8dd48a708.svg</a>
+  
+    <li><a href="../../../../public/assets/lato/lato-bold-bf7b57ea253cb49ba87fcbd9f9c5bc31e728c7eda55f506c7d71f4d32a698304_svg.html">lato-bold-bf7b57ea253cb49ba87fcbd9f9c5bc31e728c7eda55f506c7d71f4d32a698304.svg</a>
+  
+    <li><a href="../../../../public/assets/lato/lato-bolditalic-8dd386a7f73d468e8ae280a71ceef51e15c1395b9e48ee93521a86346fef7674_svg.html">lato-bolditalic-8dd386a7f73d468e8ae280a71ceef51e15c1395b9e48ee93521a86346fef7674.svg</a>
+  
+    <li><a href="../../../../public/assets/lato/lato-italic-ec12a19ee7a16e480f6eb6ac0361fd5440f144aaab1d10b6f54d671ebef52a67_svg.html">lato-italic-ec12a19ee7a16e480f6eb6ac0361fd5440f144aaab1d10b6f54d671ebef52a67.svg</a>
+  
+    <li><a href="../../../../public/assets/lato/lato-light-d8cd85016866165beddb2b9f553d8f7f531d1b16f5aba0ccbf1f7f0f194398d0_svg.html">lato-light-d8cd85016866165beddb2b9f553d8f7f531d1b16f5aba0ccbf1f7f0f194398d0.svg</a>
+  
+    <li><a href="../../../../public/assets/lato/lato-regular-848d8dc6a5142d0452b2baf8b94864138754dc90f14258d8056c2fd7e052e07e_svg.html">lato-regular-848d8dc6a5142d0452b2baf8b94864138754dc90f14258d8056c2fd7e052e07e.svg</a>
+  
+    <li><a href="../../../../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../../../../public/report_txt.html">report</a>
+  
+    <li><a href="../../../../public/robots_txt.html">robots</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/flat-ui-pro_js.html">flat-ui-pro.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/html5shiv_js.html">html5shiv.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/respond_min_js.html">respond.min.js</a>
+  
+    <li><a href="../../../../vendor/assets/javascripts/video_js.html">video.js</a>
+  
+    <li><a href="../../../../vendor/assets/stylesheets/flat-ui-pro_scss.html">flat-ui-pro.scss</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page app/assets/stylesheets/base/_normalize.scss">
+
+<pre>! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css   
+
+ Document
+ ==========================================================================</pre>
+
+<p>/**</p>
+
+<pre> 1. Correct the line height in all browsers.
+ 2. Prevent adjustments of font size after orientation changes in
+    IE on Windows Phone and in iOS.
+/</pre>
+
+<p>html {</p>
+
+<pre>line-height: 1.15; /* 1 */
+-ms-text-size-adjust: 100%; /* 2 */
+-webkit-text-size-adjust: 100%; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/* Sections</p>
+
+<pre>========================================================================== */</pre>
+
+<p>/**</p>
+
+<pre> Remove the margin in all browsers (opinionated).
+/</pre>
+
+<p>body {</p>
+
+<pre>margin: 0;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Add the correct display in IE 9-.
+/</pre>
+
+<p>article, aside, footer, header, nav, section {</p>
+
+<pre>display: block;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Correct the font size and margin on `h1` elements within `section` and
+ `article` contexts in Chrome, Firefox, and Safari.
+/</pre>
+
+<p>h1 {</p>
+
+<pre>font-size: 2em;
+margin: 0.67em 0;</pre>
+
+<p>}</p>
+
+<p>/* Grouping content</p>
+
+<pre>========================================================================== */</pre>
+
+<p>/**</p>
+
+<pre> Add the correct display in IE 9-.
+ 1. Add the correct display in IE.
+/</pre>
+
+<p>figcaption, figure, main { /* 1 */</p>
+
+<pre>display: block;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Add the correct margin in IE 8.
+/</pre>
+
+<p>figure {</p>
+
+<pre>margin: 1em 40px;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Add the correct box sizing in Firefox.
+ 2. Show the overflow in Edge and IE.
+/</pre>
+
+<p>hr {</p>
+
+<pre>box-sizing: content-box; /* 1 */
+height: 0; /* 1 */
+overflow: visible; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Correct the inheritance and scaling of font size in all browsers.
+ 2. Correct the odd `em` font sizing in all browsers.
+/</pre>
+
+<p>pre {</p>
+
+<pre>font-family: monospace, monospace; /* 1 */
+font-size: 1em; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/* Text-level semantics</p>
+
+<pre>========================================================================== */</pre>
+
+<p>/**</p>
+
+<pre> 1. Remove the gray background on active links in IE 10.
+ 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+/</pre>
+
+<p>a {</p>
+
+<pre>background-color: transparent; /* 1 */
+-webkit-text-decoration-skip: objects; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+ 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+/</pre>
+
+<p><a href="title">abbr</a> {</p>
+
+<pre>border-bottom: none; /* 1 */
+text-decoration: underline; /* 2 */
+text-decoration: underline dotted; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+/</pre>
+
+<p>b, strong {</p>
+
+<pre>font-weight: inherit;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Add the correct font weight in Chrome, Edge, and Safari.
+/</pre>
+
+<p>b, strong {</p>
+
+<pre>font-weight: bolder;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Correct the inheritance and scaling of font size in all browsers.
+ 2. Correct the odd `em` font sizing in all browsers.
+/</pre>
+
+<p>code, kbd, samp {</p>
+
+<pre>font-family: monospace, monospace; /* 1 */
+font-size: 1em; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Add the correct font style in Android 4.3-.
+/</pre>
+
+<p>dfn {</p>
+
+<pre>font-style: italic;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Add the correct background and color in IE 9-.
+/</pre>
+
+<p>mark {</p>
+
+<pre>background-color: #ff0;
+color: #000;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Add the correct font size in all browsers.
+/</pre>
+
+<p>small {</p>
+
+<pre>font-size: 80%;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Prevent `sub` and `sup` elements from affecting the line height in
+ all browsers.
+/</pre>
+
+<p>sub, sup {</p>
+
+<pre>font-size: 75%;
+line-height: 0;
+position: relative;
+vertical-align: baseline;</pre>
+
+<p>}</p>
+
+<p>sub {</p>
+
+<pre>bottom: -0.25em;</pre>
+
+<p>}</p>
+
+<p>sup {</p>
+
+<pre>top: -0.5em;</pre>
+
+<p>}</p>
+
+<p>/* Embedded content</p>
+
+<pre>========================================================================== */</pre>
+
+<p>/**</p>
+
+<pre> Add the correct display in IE 9-.
+/</pre>
+
+<p>audio, video {</p>
+
+<pre>display: inline-block;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Add the correct display in iOS 4-7.
+/</pre>
+
+<p><a href="controls">audio:not(</a>) {</p>
+
+<pre>display: none;
+height: 0;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Remove the border on images inside links in IE 10-.
+/</pre>
+
+<p>img {</p>
+
+<pre>border-style: none;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Hide the overflow in IE.
+/</pre>
+
+<p>svg:not(:root) {</p>
+
+<pre>overflow: hidden;</pre>
+
+<p>}</p>
+
+<p>/* Forms</p>
+
+<pre>========================================================================== */</pre>
+
+<p>/**</p>
+
+<pre> 1. Change the font styles in all browsers (opinionated).
+ 2. Remove the margin in Firefox and Safari.
+/</pre>
+
+<p>button, input, optgroup, select, textarea {</p>
+
+<pre>font-family: sans-serif; /* 1 */
+font-size: 100%; /* 1 */
+line-height: 1.15; /* 1 */
+margin: 0; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Show the overflow in IE.
+ 1. Show the overflow in Edge.
+/</pre>
+
+<p>button, input { /* 1 */</p>
+
+<pre>overflow: visible;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Remove the inheritance of text transform in Edge, Firefox, and IE.
+ 1. Remove the inheritance of text transform in Firefox.
+/</pre>
+
+<p>button, select { /* 1 */</p>
+
+<pre>text-transform: none;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+    controls in Android 4.
+ 2. Correct the inability to style clickable types in iOS and Safari.
+/</pre>
+
+<p>button, html [type=“button”], /* 1 */ [type=“reset”],</p>
+<dl class="rdoc-list label-list"><dt>type=“submit”
+<dd>
+<p>{</p>
+</dd></dl>
+
+<pre>-webkit-appearance: button; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Remove the inner border and padding in Firefox.
+/</pre>
+
+<p>button::-moz-focus-inner, [type=“button”]::-moz-focus-inner,
+[type=“reset”]::-moz-focus-inner, [type=“submit”]::-moz-focus-inner {</p>
+
+<pre>border-style: none;
+padding: 0;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre class="ruby"> <span class="ruby-constant">Restore</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">focus</span> <span class="ruby-identifier">styles</span> <span class="ruby-identifier">unset</span> <span class="ruby-identifier">by</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">previous</span> <span class="ruby-identifier">rule</span>.
+<span class="ruby-operator">/</span>
+</pre>
+
+<p>button:-moz-focusring, [type=“button”]:-moz-focusring,
+[type=“reset”]:-moz-focusring, [type=“submit”]:-moz-focusring {</p>
+
+<pre>outline: 1px dotted ButtonText;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Correct the padding in Firefox.
+/</pre>
+
+<p>fieldset {</p>
+
+<pre>padding: 0.35em 0.75em 0.625em;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Correct the text wrapping in Edge and IE.
+ 2. Correct the color inheritance from `fieldset` elements in IE.
+ 3. Remove the padding so developers are not caught out when they zero out
+    `fieldset` elements in all browsers.
+/</pre>
+
+<p>legend {</p>
+
+<pre>box-sizing: border-box; /* 1 */
+color: inherit; /* 2 */
+display: table; /* 1 */
+max-width: 100%; /* 1 */
+padding: 0; /* 3 */
+white-space: normal; /* 1 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Add the correct display in IE 9-.
+ 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+/</pre>
+
+<p>progress {</p>
+
+<pre>display: inline-block; /* 1 */
+vertical-align: baseline; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Remove the default vertical scrollbar in IE.
+/</pre>
+
+<p>textarea {</p>
+
+<pre>overflow: auto;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Add the correct box sizing in IE 10-.
+ 2. Remove the padding in IE 10-.
+/</pre>
+
+<p>[type=“checkbox”],</p>
+<dl class="rdoc-list label-list"><dt>type=“radio”
+<dd>
+<p>{</p>
+</dd></dl>
+
+<pre>box-sizing: border-box; /* 1 */
+padding: 0; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Correct the cursor style of increment and decrement buttons in Chrome.
+/</pre>
+
+<p>[type=“number”]::-webkit-inner-spin-button,
+[type=“number”]::-webkit-outer-spin-button {</p>
+
+<pre>height: auto;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Correct the odd appearance in Chrome and Safari.
+ 2. Correct the outline style in Safari.
+/</pre>
+<dl class="rdoc-list label-list"><dt>type=“search”
+<dd>
+<p>{</p>
+</dd></dl>
+
+<pre>-webkit-appearance: textfield; /* 1 */
+outline-offset: -2px; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+/</pre>
+
+<p>[type=“search”]::-webkit-search-cancel-button,
+[type=“search”]::-webkit-search-decoration {</p>
+
+<pre>-webkit-appearance: none;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> 1. Correct the inability to style clickable types in iOS and Safari.
+ 2. Change font properties to `inherit` in Safari.
+/</pre>
+
+<p>::-webkit-file-upload-button {</p>
+
+<pre>-webkit-appearance: button; /* 1 */
+font: inherit; /* 2 */</pre>
+
+<p>}</p>
+
+<p>/* Interactive</p>
+
+<pre>========================================================================== */</pre>
+
+<p>/*</p>
+
+<pre> Add the correct display in IE 9-.
+ 1. Add the correct display in Edge, IE, and Firefox.
+/</pre>
+
+<p>details, /* 1 */ menu {</p>
+
+<pre>display: block;</pre>
+
+<p>}</p>
+
+<p>/*</p>
+
+<pre> Add the correct display in all browsers.
+/</pre>
+
+<p>summary {</p>
+
+<pre>display: list-item;</pre>
+
+<p>}</p>
+
+<p>/* Scripting</p>
+
+<pre>========================================================================== */</pre>
+
+<p>/**</p>
+
+<pre> Add the correct display in IE 9-.
+/</pre>
+
+<p>canvas {</p>
+
+<pre>display: inline-block;</pre>
+
+<p>}</p>
+
+<p>/**</p>
+
+<pre> Add the correct display in IE.
+/</pre>
+
+<p>template {</p>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+
+<p>/* Hidden</p>
+
+<pre>========================================================================== */</pre>
+
+<p>/**</p>
+
+<pre> Add the correct display in IE 10-.
+/</pre>
+<dl class="rdoc-list label-list"><dt>hidden
+<dd>
+<p>{</p>
+</dd></dl>
+
+<pre>display: none;</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.3.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
