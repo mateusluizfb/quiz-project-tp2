@@ -17,7 +17,6 @@ RSpec.describe Answer, type: :model do
 
   it 'Is valid with valid attributes' do
       answer = Answer.new valid_attributes
-      byebug
       expect(answer).to be_valid
   end
 
