@@ -71,7 +71,6 @@ class QuizzesController < ApplicationController
   end
 
   def evaluate
-
     evaluation = Quiz.evaluate(params[:questions], current_user, params[:quiz_id])
     @answers = evaluation[:answers]
     @nota = evaluation[:nota]
@@ -92,25 +91,14 @@ class QuizzesController < ApplicationController
     @discipline = Discipline.find(params[:discipline_id])
   end
 
-<<<<<<< HEAD
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def quiz_params
-        params.require(:quiz).permit(:name,
-                                    questions_attributes: %i[id statement score _destroy
-                                    answers_attributes: %i[id text correct_option _destroy]])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def quiz_params
+      params.require(:quiz).permit(:name,
+                                  questions_attributes: %i[id statement score _destroy
+                                  answers_attributes: %i[id text correct_option _destroy]])
+  end
 
   def set_topic
     @topic = Topic.find(params[:topic_id])
-=======
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def quiz_params
-    params.require(:quiz).permit(
-      :name,
-      questions_attributes: [
-        :id, :statement, :score, :_destroy, answers_attributes: %i[id text correct_option _destroy]
-      ]
-    )
->>>>>>> 9ca7dec589590f70263717b4681f10b93f5869c2
   end
 end

@@ -44,15 +44,9 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
-<<<<<<< HEAD
-  def update
-
-    params[:user].delete(:password) if params[:user][:password].blank?
-
-=======
   def update # rubocop:disable Metrics/AbcSize
     params[:user].delete(:password) if params[:user][:password].blank?
->>>>>>> 9ca7dec589590f70263717b4681f10b93f5869c2
+
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }

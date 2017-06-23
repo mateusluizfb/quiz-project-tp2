@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Answer, type: :model do
-
   let(:valid_attributes) {
     {
       text: 'Letra a',
@@ -25,5 +24,4 @@ RSpec.describe Answer, type: :model do
     answer = Answer.new invalid_attributes
     expect(answer).to_not be_valid
   end
-
 end

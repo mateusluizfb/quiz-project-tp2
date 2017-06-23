@@ -13,7 +13,12 @@ class Quiz < ApplicationRecord
 
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
-<<<<<<< HEAD
+  ##
+  # Nome obrigatório
+  validates :name, presence: true
+
+  ##
+  # Este método calcula a nota do usuário para um determinado questionário
   def self.evaluate(questions, user, quiz_id)
     @answers = {}
     @questions_number = questions.count
@@ -44,12 +49,5 @@ class Quiz < ApplicationRecord
     @user_quiz.save
 
     return {answers: @answers, nota: @nota}
-
   end
-
-=======
-  ##
-  # Nome obrigatório
-  validates :name, presence: true
->>>>>>> 9ca7dec589590f70263717b4681f10b93f5869c2
 end

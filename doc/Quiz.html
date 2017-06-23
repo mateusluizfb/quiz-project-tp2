@@ -70,6 +70,8 @@
 
   <ul class="link-list" role="directory">
     
+    <li ><a href="#method-c-evaluate">::evaluate</a>
+    
     <li ><a href="#method-i-name">#name</a>
     
     <li ><a href="#method-i-questions">#questions</a>
@@ -107,6 +109,75 @@ uma disciplina e possui muitas questões</p>
     
 
     
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-evaluate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate</span><span
+            class="method-args">(questions, user, quiz_id)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Este método calcula a nota do usuário para um determinado questionário</p>
+          
+          
+
+          
+          <div class="method-source-code" id="evaluate-source">
+            <pre><span class="ruby-comment"># File app/models/quiz.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">evaluate</span>(<span class="ruby-identifier">questions</span>, <span class="ruby-identifier">user</span>, <span class="ruby-identifier">quiz_id</span>)
+  <span class="ruby-ivar">@answers</span> = {}
+  <span class="ruby-ivar">@questions_number</span> = <span class="ruby-identifier">questions</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-ivar">@total_value</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@user_score</span> = <span class="ruby-value">0</span>
+
+  <span class="ruby-identifier">questions</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">question_id</span>, <span class="ruby-identifier">answer_id</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">question</span> = <span class="ruby-constant">Question</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">question_id</span>)
+    <span class="ruby-identifier">marked_answer</span> = <span class="ruby-constant">Answer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">answer_id</span>)
+    <span class="ruby-identifier">correct_answer</span> = <span class="ruby-identifier">question</span>.<span class="ruby-identifier">answers</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">correct_option</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>).<span class="ruby-identifier">first</span>
+
+    <span class="ruby-identifier">question</span>.<span class="ruby-identifier">score</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">question_score</span> = <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">question_score</span> = <span class="ruby-identifier">question</span>.<span class="ruby-identifier">score</span>
+
+    <span class="ruby-ivar">@total_value</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">question_score</span>
+    <span class="ruby-ivar">@answers</span>[<span class="ruby-identifier">question</span>.<span class="ruby-identifier">statement</span>] = { <span class="ruby-identifier">marked</span><span class="ruby-operator">:</span> <span class="ruby-identifier">marked_answer</span>.<span class="ruby-identifier">text</span>, <span class="ruby-identifier">correct</span><span class="ruby-operator">:</span> <span class="ruby-identifier">correct_answer</span>.<span class="ruby-identifier">text</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">:</span> <span class="ruby-identifier">question_score</span> }
+
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@answers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">question</span>, <span class="ruby-identifier">answers</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">answers</span>[<span class="ruby-value">:marked</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">answers</span>[<span class="ruby-value">:correct</span>]
+      <span class="ruby-ivar">@user_score</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">answers</span>[<span class="ruby-value">:value</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment">## Transformar pra base 10 ##</span>
+  <span class="ruby-ivar">@nota</span> = ((<span class="ruby-ivar">@user_score</span> <span class="ruby-operator">*</span> <span class="ruby-value">100</span>) <span class="ruby-operator">/</span> <span class="ruby-ivar">@total_value</span>) <span class="ruby-operator">/</span> <span class="ruby-value">10</span>
+  <span class="ruby-ivar">@user_quiz</span> = <span class="ruby-constant">UserQuiz</span>.<span class="ruby-identifier">create</span>(<span class="ruby-identifier">user_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">quiz_id</span><span class="ruby-operator">:</span> <span class="ruby-identifier">quiz_id</span>, <span class="ruby-identifier">score</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@nota</span>)
+  <span class="ruby-ivar">@user_quiz</span>.<span class="ruby-identifier">save</span>
+
+  <span class="ruby-keyword">return</span> {<span class="ruby-identifier">answers</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@answers</span>, <span class="ruby-identifier">nota</span><span class="ruby-operator">:</span> <span class="ruby-ivar">@nota</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
      <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
        <header>
          <h3>Public Instance Methods</h3>
@@ -158,7 +229,7 @@ uma disciplina e possui muitas questões</p>
 
         <div class="method-description">
           
-          <p>Este método estabelece o relacionamento 1-N com  questões e com exclusão em
+          <p>Este método estabelece o relacionamento 1-N com questões e com exclusão em
 cascata</p>
           
           
