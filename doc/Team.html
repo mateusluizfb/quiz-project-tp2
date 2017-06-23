@@ -64,7 +64,19 @@
 
     
     
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
     
+    <li ><a href="#method-i-name">#name</a>
+    
+    <li ><a href="#method-i-users">#users</a>
+    
+  </ul>
+</div>
+
   </div>
 </nav>
 
@@ -75,6 +87,8 @@
 
   <section class="description">
     
+<p>Esta classe representa a entidade equipe, que pode ter um ou mais usuários</p>
+
   </section>
 
   
@@ -90,6 +104,78 @@
     
 
     
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Nome obrigatório</p>
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File app/models/team.rb, line 11</span>
+<span class="ruby-identifier">validates_presence_of</span> <span class="ruby-value">:name</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-users" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">users</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Este método estabelece o relacionamento N-N com usuário</p>
+          
+          
+
+          
+          <div class="method-source-code" id="users-source">
+            <pre><span class="ruby-comment"># File app/models/team.rb, line 7</span>
+<span class="ruby-identifier">has_and_belongs_to_many</span> <span class="ruby-value">:users</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
   </section>
 </main>
 

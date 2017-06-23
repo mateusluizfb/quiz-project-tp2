@@ -64,7 +64,21 @@
 
     
     
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
     
+    <li ><a href="#method-i-discipline">#discipline</a>
+    
+    <li ><a href="#method-i-name">#name</a>
+    
+    <li ><a href="#method-i-quizzes">#quizzes</a>
+    
+  </ul>
+</div>
+
   </div>
 </nav>
 
@@ -75,6 +89,9 @@
 
   <section class="description">
     
+<p>Esta classe representa a entidade tópico, que pertence à  uma disciplina e
+possui muitos questionários</p>
+
   </section>
 
   
@@ -90,6 +107,111 @@
     
 
     
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-discipline" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">discipline</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Este método estabelece o relacionamento 1-N com disciplina</p>
+          
+          
+
+          
+          <div class="method-source-code" id="discipline-source">
+            <pre><span class="ruby-comment"># File app/models/topic.rb, line 12</span>
+<span class="ruby-identifier">belongs_to</span> <span class="ruby-value">:discipline</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Nome obrigatório</p>
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File app/models/topic.rb, line 18</span>
+<span class="ruby-identifier">validates_presence_of</span> <span class="ruby-value">:name</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-quizzes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">quizzes</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Este método estabelece o relacionamento 1-N  com questionário e exclusão em
+cascata</p>
+          
+          
+
+          
+          <div class="method-source-code" id="quizzes-source">
+            <pre><span class="ruby-comment"># File app/models/topic.rb, line 8</span>
+<span class="ruby-identifier">has_many</span> <span class="ruby-value">:quizzes</span>, <span class="ruby-identifier">dependent</span><span class="ruby-operator">:</span> <span class="ruby-value">:destroy</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
   </section>
 </main>
 

@@ -1,12 +1,12 @@
-Fri, 23 Jun 2017 14:57:53 -0300
-app/models/team.rb	Fri, 12 May 2017 11:23:23 -0300
-app/models/user.rb	Fri, 23 Jun 2017 14:53:19 -0300
-app/models/discipline.rb	Fri, 23 Jun 2017 14:57:51 -0300
+Fri, 23 Jun 2017 15:25:41 -0300
+app/models/team.rb	Fri, 23 Jun 2017 15:18:48 -0300
+app/models/user.rb	Fri, 23 Jun 2017 15:25:06 -0300
+app/models/discipline.rb	Fri, 23 Jun 2017 15:01:15 -0300
 app/models/application_record.rb	Fri, 23 Jun 2017 14:52:15 -0300
-app/models/topic.rb	Fri, 12 May 2017 23:29:31 -0300
+app/models/topic.rb	Fri, 23 Jun 2017 15:21:15 -0300
 app/models/answer.rb	Fri, 23 Jun 2017 14:50:06 -0300
-app/models/question.rb	Fri, 12 May 2017 23:29:43 -0300
+app/models/question.rb	Fri, 23 Jun 2017 15:15:53 -0300
 app/models/ability.rb	Fri, 23 Jun 2017 14:48:29 -0300
-app/models/quiz.rb	Thu, 22 Jun 2017 07:06:16 -0300
-app/models/notebook.rb	Fri, 23 Jun 2017 14:34:13 -0300
-app/models/user_quiz.rb	Thu, 22 Jun 2017 07:06:16 -0300
+app/models/quiz.rb	Fri, 23 Jun 2017 15:17:39 -0300
+app/models/notebook.rb	Fri, 23 Jun 2017 15:12:38 -0300
+app/models/user_quiz.rb	Fri, 23 Jun 2017 15:25:35 -0300

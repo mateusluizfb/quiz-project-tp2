@@ -64,7 +64,19 @@
 
     
     
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
     
+    <li ><a href="#method-i-disciplines">#disciplines</a>
+    
+    <li ><a href="#method-i-user">#user</a>
+    
+  </ul>
+</div>
+
   </div>
 </nav>
 
@@ -75,6 +87,9 @@
 
   <section class="description">
     
+<p>Esta classe representa a entidade caderno, que pertence à um usuário e pode
+ter mais de uma disciplina</p>
+
   </section>
 
   
@@ -90,6 +105,78 @@
     
 
     
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-disciplines" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disciplines</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Este método estabelece o relacionamento N-N com disciplinas</p>
+          
+          
+
+          
+          <div class="method-source-code" id="disciplines-source">
+            <pre><span class="ruby-comment"># File app/models/notebook.rb, line 11</span>
+<span class="ruby-identifier">has_and_belongs_to_many</span> <span class="ruby-value">:disciplines</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Este método estabelece o relacionamento 1-N com usuário</p>
+          
+          
+
+          
+          <div class="method-source-code" id="user-source">
+            <pre><span class="ruby-comment"># File app/models/notebook.rb, line 7</span>
+<span class="ruby-identifier">belongs_to</span> <span class="ruby-value">:user</span>
+</pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
   </section>
 </main>
 
