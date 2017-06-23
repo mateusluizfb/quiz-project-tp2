@@ -1,9 +1,9 @@
 ##
-# Esta classe representa a entidade tópico, que pertence à 
+# Esta classe representa a entidade tópico, que pertence à
 # uma disciplina e possui muitos questionários
 class Topic < ApplicationRecord
   ##
-  # Este método estabelece o relacionamento 1-N 
+  # Este método estabelece o relacionamento 1-N
   # com questionário e exclusão em cascata
   has_many :quizzes, dependent: :destroy
 

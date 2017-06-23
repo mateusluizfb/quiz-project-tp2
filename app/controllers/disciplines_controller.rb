@@ -24,13 +24,12 @@ class DisciplinesController < ApplicationController
 
   # POST /disciplines
   # POST /disciplines.json
-  def create
+  def create # rubocop:disable Metrics/AbcSize
     @discipline = Discipline.new(discipline_params)
 
     respond_to do |format|
       if @discipline.save
         current_user.notebook.disciplines << @discipline
-        
         format.html { redirect_to @discipline, notice: 'Discipline was successfully created.' }
         format.json { render :show, status: :created, location: @discipline }
       else

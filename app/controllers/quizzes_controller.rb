@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
   before_action :set_discipline, except: [:evaluate]
   before_action :set_topic, except: [:evaluate]
-  before_action :set_quiz, only: [:show, :edit, :update, :destroy]
+  before_action :set_quiz, only: %i[show edit update destroy]
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
@@ -82,19 +82,14 @@ class QuizzesController < ApplicationController
       correct_answer = question.answers.where(correct_option: true).first
       question_score = question.score
 
-      if question_score == nil
-        question_score = 1
-      end
+      question_score = 1 if question_score.nil?
 
       @total_value += question_score
-      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text, value: question_score }
-
+      @answers[question.statement] = {marked: marked_answer.text, correct: correct_answer.text, value: question_score}
     end
 
-    @answers.each do |question, answers|
-      if answers[:marked] == answers[:correct]
-        @user_score += answers[:value]
-      end
+    @answers.each do |_, answers|
+      @user_score += answers[:value] if answers[:marked] == answers[:correct]
     end
 
     ## Transformar pra base 10 ##

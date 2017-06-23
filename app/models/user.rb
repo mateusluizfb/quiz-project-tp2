@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
   ##
   # Email obrigatório
-  validates :email, presence: true 
+  validates :email, presence: true
 
   ##
   # Login obrigatório

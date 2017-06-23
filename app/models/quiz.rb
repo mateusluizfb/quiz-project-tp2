@@ -7,10 +7,10 @@ class Quiz < ApplicationRecord
   belongs_to :topic
 
   ##
-  # Este método estabelece o relacionamento 1-N com 
+  # Este método estabelece o relacionamento 1-N com
   # questões e com exclusão em cascata
   has_many :questions, dependent: :destroy, inverse_of: :quiz
-  
+
   accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
   ##
