@@ -1,3 +1,6 @@
+##
+# Controller created by Devise gem. No methods were used.
+
 class Users::ConfirmationsController < Devise::ConfirmationsController
   # GET /resource/confirmation/new
   # def new

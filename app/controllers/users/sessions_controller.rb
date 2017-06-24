@@ -1,3 +1,6 @@
+##
+# Controller created by Devise gem. No methods were used.
+
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 

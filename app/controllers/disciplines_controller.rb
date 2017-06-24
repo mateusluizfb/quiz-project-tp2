@@ -1,27 +1,40 @@
+##
+# This class is used to control the requisitions Discipline gets through its views.
+
 class DisciplinesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_discipline, only: %i[show edit update destroy]
 
+  ##
+  # Shows index of all disciplines.
   # GET /disciplines
   # GET /disciplines.json
   def index
     @disciplines = Discipline.all
   end
 
+  ##
+  # Shows an specific discipline.
   # GET /disciplines/1
   # GET /disciplines/1.json
   def show
   end
 
+  ##
+  # Form to create new discipline.
   # GET /disciplines/new
   def new
     @discipline = Discipline.new
   end
 
+  ##
+  # Edit specific discipline.
   # GET /disciplines/1/edit
   def edit
   end
 
+  ##
+  # Creates a discipline and tries to save it to the database.
   # POST /disciplines
   # POST /disciplines.json
   def create # rubocop:disable Metrics/AbcSize
@@ -39,6 +52,8 @@ class DisciplinesController < ApplicationController
     end
   end
 
+  ##
+  # Updates discipline on database.
   # PATCH/PUT /disciplines/1
   # PATCH/PUT /disciplines/1.json
   def update
@@ -53,6 +68,8 @@ class DisciplinesController < ApplicationController
     end
   end
 
+  ##
+  # Associates Discipline to an User's Notebook.
   def associate
     @discipline = Discipline.find(params[:discipline_id])
 
@@ -62,6 +79,8 @@ class DisciplinesController < ApplicationController
     end
   end
 
+  ##
+  # Disassociates Discipline to an User's Notebook.
   def disassociate
     @discipline = Discipline.find(params[:discipline_id])
 
@@ -71,16 +90,22 @@ class DisciplinesController < ApplicationController
     end
   end
 
+  ##
+  # Exports specific Discipline. Exporting process documented in DisciplinesHelper.
   def export
     @discipline = Discipline.find(params[:discipline_id])
 
     send_file(export_discipline(@discipline))
   end
 
+  ##
+  # Exports list of all Disciplines. Exporting process documented in DisciplinesHelper.
   def export_all
     send_file(export_disciplines(Discipline.all))
   end
 
+  ##
+  # Deletes specific discipline.
   # DELETE /disciplines/1
   # DELETE /disciplines/1.json
   def destroy

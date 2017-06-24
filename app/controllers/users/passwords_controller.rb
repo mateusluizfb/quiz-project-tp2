@@ -1,3 +1,6 @@
+##
+# Controller created by Devise gem. No methods were used.
+
 class Users::PasswordsController < Devise::PasswordsController
   # GET /resource/password/new
   # def new

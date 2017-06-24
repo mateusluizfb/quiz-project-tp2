@@ -1,3 +1,6 @@
+##
+# This class is used to control the requisitions Quizzes gets through its views.
+
 class QuizzesController < ApplicationController
   before_action :set_discipline, except: [:evaluate]
   before_action :set_topic, except: [:evaluate]
@@ -5,26 +8,36 @@ class QuizzesController < ApplicationController
   before_action :authenticate_user!
   skip_before_action :verify_authenticity_token
 
+  ##
+  # Shows index of all quizzes.
   # GET /quizzes
   # GET /quizzes.json
   def index
     @quizzes = @topic.quizzes
   end
 
+  ##
+  # Shows an specific quiz.
   # GET /quizzes/1
   # GET /quizzes/1.json
   def show
   end
 
+  ##
+  # Form to create new quiz.
   # GET /quizzes/new
   def new
     @quiz = Quiz.new
   end
 
+  ##
+  # Edit specific quiz.
   # GET /quizzes/1/edit
   def edit
   end
 
+  ##
+  # Creates a quiz and tries to save it to the database.
   # POST /quizzes
   # POST /quizzes.json
   def create # rubocop:disable Metrics/AbcSize
@@ -42,6 +55,8 @@ class QuizzesController < ApplicationController
     end
   end
 
+  ##
+  # Updates quiz on database.
   # PATCH/PUT /quizzes/1
   # PATCH/PUT /quizzes/1.json
   def update
@@ -58,6 +73,8 @@ class QuizzesController < ApplicationController
     end
   end
 
+  ##
+  # Deletes specific quiz.
   # DELETE /quizzes/1
   # DELETE /quizzes/1.json
   def destroy
@@ -70,6 +87,8 @@ class QuizzesController < ApplicationController
     end
   end
 
+  ##
+  # Evaluates Quiz so that we know what are the correct answers and what grade the user got in the Quiz.
   def evaluate
     evaluation = Quiz.evaluate(params[:questions], current_user, params[:quiz_id])
     @answers = evaluation[:answers]
