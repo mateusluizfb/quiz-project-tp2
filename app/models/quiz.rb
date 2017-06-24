@@ -30,17 +30,14 @@ class Quiz < ApplicationRecord
       marked_answer = Answer.find(answer_id)
       correct_answer = question.answers.where(correct_option: true).first
 
-      question.score == nil ? question_score = 1 : question_score = question.score
+      question.score.nil? ? question_score = 1 : question_score = question.score
 
       @total_value += question_score
-      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text, value: question_score }
-
+      @answers[question.statement] = {marked: marked_answer.text, correct: correct_answer.text, value: question_score}
     end
 
-    @answers.each do |question, answers|
-      if answers[:marked] == answers[:correct]
-        @user_score += answers[:value]
-      end
+    @answers.each do |_question, answers|
+      @user_score += answers[:value] if answers[:marked] == answers[:correct]
     end
 
     ## Transformar pra base 10 ##
@@ -48,6 +45,6 @@ class Quiz < ApplicationRecord
     @user_quiz = UserQuiz.create(user_id: user.id, quiz_id: quiz_id, score: @nota)
     @user_quiz.save
 
-    return {answers: @answers, nota: @nota}
+    {answers: @answers, nota: @nota}
   end
 end
