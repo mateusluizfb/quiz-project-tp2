@@ -20,12 +20,14 @@ RSpec.describe Question, type: :model do
     }
   }
 
-  xit 'Is valid with valid attributes' do
-
+  it 'Is valid with valid attributes' do
+    question = Question.new valid_attributes
+    expect(question).to be_valid
   end
 
-  xit 'Is invalid with valid attributes' do
-
+  it 'Is invalid with valid attributes' do
+    question = Question.new invalid_attributes
+    expect(question).to_not be_valid
   end
 
 end

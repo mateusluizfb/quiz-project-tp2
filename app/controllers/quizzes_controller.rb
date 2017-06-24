@@ -40,7 +40,7 @@ class QuizzesController < ApplicationController
   # Creates a quiz and tries to save it to the database.
   # POST /quizzes
   # POST /quizzes.json
-  def create # rubocop:disable Metrics/AbcSize
+  def create
     @quiz = @topic.quizzes.build(quiz_params)
     respond_to do |format|
       if @quiz.save
@@ -112,9 +112,10 @@ class QuizzesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def quiz_params
-      params.require(:quiz).permit(:name,
-                                  questions_attributes: %i[id statement score _destroy
-                                  answers_attributes: %i[id text correct_option _destroy]])
+    params.require(:quiz).permit(
+      :name,
+      questions_attributes: %i[id statement score _destroy answers_attributes: %i[id text correct_option _destroy]]
+    )
   end
 
   def set_topic

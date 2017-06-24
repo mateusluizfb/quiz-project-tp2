@@ -19,7 +19,7 @@ class Quiz < ApplicationRecord
 
   ##
   # Este método calcula a nota do usuário para um determinado questionário
-  def self.evaluate(questions, user, quiz_id)
+  def self.evaluate(questions, user, quiz_id) # rubocop:disable Metrics/AbcSize
     @answers = {}
     @questions_number = questions.count
     @total_value = 0
@@ -30,17 +30,22 @@ class Quiz < ApplicationRecord
       marked_answer = Answer.find(answer_id)
       correct_answer = question.answers.where(correct_option: true).first
 
-      question.score == nil ? question_score = 1 : question_score = question.score
+<<<<<<< HEAD
+      question_score = question.score.nil? ? 1 : question.score
+=======
+      question.score.nil? ? question_score = 1 : question_score = question.score
+>>>>>>> 2386f969fa2626121231aeb05c149abfd35beba8
 
       @total_value += question_score
-      @answers[question.statement] = { marked: marked_answer.text, correct: correct_answer.text, value: question_score }
-
+      @answers[question.statement] = {marked: marked_answer.text, correct: correct_answer.text, value: question_score}
     end
 
-    @answers.each do |question, answers|
-      if answers[:marked] == answers[:correct]
-        @user_score += answers[:value]
-      end
+<<<<<<< HEAD
+    @answers.each do |_, answers|
+=======
+    @answers.each do |_question, answers|
+>>>>>>> 2386f969fa2626121231aeb05c149abfd35beba8
+      @user_score += answers[:value] if answers[:marked] == answers[:correct]
     end
 
     ## Transformar pra base 10 ##
@@ -48,6 +53,6 @@ class Quiz < ApplicationRecord
     @user_quiz = UserQuiz.create(user_id: user.id, quiz_id: quiz_id, score: @nota)
     @user_quiz.save
 
-    return {answers: @answers, nota: @nota}
+    {answers: @answers, nota: @nota}
   end
 end
