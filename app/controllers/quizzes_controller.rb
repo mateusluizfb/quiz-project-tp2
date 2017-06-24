@@ -40,7 +40,7 @@ class QuizzesController < ApplicationController
   # Creates a quiz and tries to save it to the database.
   # POST /quizzes
   # POST /quizzes.json
-  def create
+  def create # rubocop:disable Metrics/AbcSize
     @quiz = @topic.quizzes.build(quiz_params)
     respond_to do |format|
       if @quiz.save
