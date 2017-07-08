@@ -91,20 +91,6 @@ class DisciplinesController < ApplicationController
   end
 
   ##
-  # Exports specific Discipline. Exporting process documented in DisciplinesHelper.
-  def export
-    @discipline = Discipline.find(params[:discipline_id])
-
-    send_file(export_discipline(@discipline))
-  end
-
-  ##
-  # Exports list of all Disciplines. Exporting process documented in DisciplinesHelper.
-  def export_all
-    send_file(export_disciplines(Discipline.all))
-  end
-
-  ##
   # Deletes specific discipline.
   # DELETE /disciplines/1
   # DELETE /disciplines/1.json

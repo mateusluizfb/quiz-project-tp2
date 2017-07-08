@@ -90,9 +90,9 @@ class QuizzesController < ApplicationController
   ##
   # Evaluates Quiz so that we know what are the correct answers and what grade the user got in the Quiz.
   def evaluate
-    evaluation = Quiz.evaluate(params[:questions], current_user, params[:quiz_id])
-    @answers = evaluation[:answers]
-    @nota = evaluation[:nota]
+    response = Quiz.find(params[:quiz_id]).evaluate(params[:questions], current_user)
+    @answers = response[:answers]
+    @nota = response[:grade]
 
     respond_to do |format|
       format.html { render 'evaluate' }
@@ -114,7 +114,8 @@ class QuizzesController < ApplicationController
   def quiz_params
     params.require(:quiz).permit(
       :name,
-      questions_attributes: [:id, :statement, :score , :_destroy, answers_attributes: [:id, :text, :correct_option, :_destroy]]
+      questions_attributes: [:id, :statement, :score, :_destroy,
+        answers_attributes: [:id, :text, :correct_option, :_destroy]]
     )
   end
 

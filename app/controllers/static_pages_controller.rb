@@ -3,9 +3,9 @@
 
 class StaticPagesController < ApplicationController
   before_action :authenticate_user!
-  
+
   ##
-	# Renders an User's dashboard.
+  # Renders an User's dashboard.
   def dashboard
   end
 end

@@ -1,2 +1,2 @@
-0.#{index + 1}|#{discipline.name}|#{topic.name}|#{quizzes}
-0.#{index + 1}|#{discipline.name}|#{topic.name}|#{quizzes}
+0.1|Matemática|Adição|Quiz do Rodrigo Chaves, }
+0.2|Matemática|Subtração|Quiz do Rodrigo Quico, }

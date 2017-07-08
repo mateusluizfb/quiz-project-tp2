@@ -6,7 +6,6 @@
       <th>Nome</th>
       <th>Inscrição</th>
       <th>Quantidade de Tópicos</th>
-      <th>Exportar Tópicos</th>
       <th></th>
       <th></th>
       <th></th>
@@ -29,7 +28,6 @@
           <span>&nbsp;&nbsp;</span>
           <%= link_to("Visualizar tópicos", discipline_topics_path(discipline) , class: 'btn btn-info btn-embossed btn-xs') %>
         </td>
-        <td><%= link_to("Exportar", discipline_export_path(discipline), class: 'btn btn-success btn-embossed btn-xs') %></td>
         <td><%= link_to 'Exibir', discipline %></td>
         <td><%= link_to 'Editar', edit_discipline_path(discipline) %></td>
         <td><%= link_to 'Excluir', discipline, method: :delete, data: { confirm: 'Você tem certeza?' } %></td>
@@ -44,4 +42,3 @@
 
 <%= link_to 'Nova Disciplina', new_discipline_path, class: 'btn btn-embossed btn-success' %>
 <span>&nbsp;</span>
-<%= link_to("Exportar Todas as Disciplinas", disciplines_export_all_path, class: 'btn btn-embossed btn-inverse') %>
