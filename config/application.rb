@@ -14,5 +14,7 @@ module QuizProjectTp2
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     config.assets.paths << Rails.root.join("app", "assets", "fonts", "glyphicons")
     config.assets.paths << Rails.root.join("app", "assets", "fonts", "lato")
+
+    config.middleware.use(StackProf::Middleware, enabled:true, mode: :wall, interval: 1000, save_every: 5)
   end
 end

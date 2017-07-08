@@ -1,27 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Answer, type: :model do
-  let(:valid_attributes) {
-    {
-      text: 'Letra a',
-      correct_option: true
-    }
-  }
+  it { should belong_to(:question) }
 
-  let(:invalid_attributes) {
-    {
-      text: nil,
-      correct_option: nil
-    }
-  }
-
-  it 'Is valid with valid attributes' do
-      answer = Answer.new valid_attributes
-      expect(answer).to be_valid
-  end
-
-  it 'Is invalid with valid attributes' do
-    answer = Answer.new invalid_attributes
-    expect(answer).to_not be_valid
-  end
+  it { should validate_presence_of(:text) }
 end

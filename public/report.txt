@@ -1,0 +1,2 @@
+0.#{index + 1}|#{discipline.name}|#{topic.name}|#{quizzes}
+0.#{index + 1}|#{discipline.name}|#{topic.name}|#{quizzes}

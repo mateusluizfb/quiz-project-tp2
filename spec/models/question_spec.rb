@@ -1,33 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Question, type: :model do
+  it { should belong_to(:quiz) }
+  it { should have_many(:answers) }
 
-  let(:quiz) { Quiz.create! name: 'Matemática' }
+  it { should accept_nested_attributes_for(:answers) }
 
-  let(:valid_attributes) {
-    {
-      statement: 'Quanto é 2 + 2?',
-      score: 10,
-      quiz_id: quiz.id
-    }
-  }
+  it { should validate_presence_of(:statement) }
 
-  let(:invalid_attributes) {
-    {
-      statement: nil,
-      score: nil,
-      quiz_id: nil
-    }
-  }
-
-  it 'Is valid with valid attributes' do
-    question = Question.new valid_attributes
-    expect(question).to be_valid
+  it "update score to 1 if it is nil" do
+    expect(create(:question).score).not_to be_nil
   end
-
-  it 'Is invalid with valid attributes' do
-    question = Question.new invalid_attributes
-    expect(question).to_not be_valid
-  end
-
 end

@@ -41,6 +41,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'sass-material-colors'
 gem "cocoon"
+gem 'stackprof'
 
 gem 'rdoc', '~> 4.2', '>= 4.2.2'
 
@@ -49,10 +50,13 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 group :test do
   gem 'simplecov', :require => false
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
 end
 
 group :development do

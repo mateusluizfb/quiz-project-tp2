@@ -1,26 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Quiz, type: :model do
+  it { should belong_to(:topic) }
+  it { should have_many(:questions) }
 
-  let(:valid_attributes) {
-    {
-      name: 'Quiz da computação'
-    }
-  }
+  it { should accept_nested_attributes_for(:questions) }
 
-  let(:invalid_attributes) {
-    {
-      name: nil
-    }
-  }
-
-  it 'Is valid with valid attributes' do
-    quiz = Quiz.new valid_attributes
-    expect(quiz).to be_valid
-  end
-
-  it 'Is invalid with invalid attributes' do
-    quiz = Quiz.new invalid_attributes
-    expect(quiz).to_not be_valid
-  end
+  it { should validate_presence_of(:name) }
 end
