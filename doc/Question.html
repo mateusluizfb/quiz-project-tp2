@@ -74,6 +74,8 @@
     
     <li ><a href="#method-i-quiz">#quiz</a>
     
+    <li ><a href="#method-i-set_score">#set_score</a>
+    
   </ul>
 </div>
 
@@ -131,7 +133,7 @@ cascata</p>
 
           
           <div class="method-source-code" id="answers-source">
-            <pre><span class="ruby-comment"># File app/models/question.rb, line 12</span>
+            <pre><span class="ruby-comment"># File app/models/question.rb, line 14</span>
 <span class="ruby-identifier">has_many</span> <span class="ruby-value">:answers</span>, <span class="ruby-identifier">dependent</span><span class="ruby-operator">:</span> <span class="ruby-value">:destroy</span>, <span class="ruby-identifier">inverse_of</span><span class="ruby-operator">:</span> <span class="ruby-value">:question</span>
 </pre>
           </div>
@@ -166,6 +168,39 @@ cascata</p>
             <pre><span class="ruby-comment"># File app/models/question.rb, line 7</span>
 <span class="ruby-identifier">belongs_to</span> <span class="ruby-value">:quiz</span>
 </pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_score" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_score</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_score-source">
+            <pre><span class="ruby-comment"># File app/models/question.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_score</span>
+  <span class="ruby-identifier">update_attribute</span>(<span class="ruby-value">:score</span>, <span class="ruby-value">1</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">score</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>
